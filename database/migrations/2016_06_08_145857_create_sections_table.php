@@ -12,7 +12,16 @@ class CreateSectionsTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('sections', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('name',255);
+        $table->text('description');
+        $table->text('tags'); //For SEO Purposes
+
+        $table->timestamps();
+        $table->softDeletes();
+
+    });
     }
 
     /**
@@ -22,6 +31,6 @@ class CreateSectionsTable extends Migration
      */
     public function down()
     {
-        //
+      Schema::drop('sections');
     }
 }

@@ -13,7 +13,7 @@
                     <li class="divider"></li>
 
                     <li>
-                        <a tabindex="-1" href="logout">
+                        <a tabindex="-1" href="/logout">
                             <i class="si si-logout pull-right"></i>Cerrar sesión
                         </a>
                     </li>
@@ -32,7 +32,7 @@
                 <i class="fa fa-navicon"></i>
             </button>
         </li>
-        
+
     </ul>
     <!-- END Header Navigation Left -->
 </header>

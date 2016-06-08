@@ -29,11 +29,11 @@
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-layers"></i><span class="sidebar-mini-hide">Productos</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('products/list')}}">Listado</a>
+                                <a href="{{url('admin/products/list')}}">Listado</a>
                             </li>
 
                             <li>
-                                <a href="{{url('products/new')}}">Crear nuevo</a>
+                                <a href="{{url('admin/products/new')}}">Crear nuevo</a>
                             </li>
 
                         </ul>
@@ -42,18 +42,18 @@
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-list"></i><span class="sidebar-mini-hide">Categorías</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('categories/list')}}">Listado de categorías</a>
+                                <a href="{{url('admin/categories/list')}}">Listado de categorías</a>
                             </li>
 
                             <li>
-                                <a href="{{url('categories/new')}}">Crear nueva categoría</a>
+                                <a href="{{url('admin/categories/new')}}">Crear nueva categoría</a>
                             </li>
                             <li>
-                                <a href="{{url('subcategories/list')}}">Listado de subcategorías</a>
+                                <a href="{{url('admin/subcategories/list')}}">Listado de subcategorías</a>
                             </li>
 
                             <li>
-                                <a href="{{url('subcategories/new')}}">Crear nueva subcategorías</a>
+                                <a href="{{url('admin/subcategories/new')}}">Crear nueva subcategorías</a>
                             </li>
 
                         </ul>
@@ -62,11 +62,11 @@
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-newspaper-o"></i><span class="sidebar-mini-hide">Noticias</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('news/list')}}">Listado</a>
+                                <a href="{{url('admin/news/list')}}">Listado</a>
                             </li>
 
                             <li>
-                                <a href="{{url('news/new')}}">Crear nueva</a>
+                                <a href="{{url('admin/news/new')}}">Crear nueva</a>
                             </li>
 
                         </ul>
@@ -75,11 +75,11 @@
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pointer"></i><span class="sidebar-mini-hide">Países</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('countries/list')}}">Listado</a>
+                                <a href="{{url('/countries/list')}}">Listado</a>
                             </li>
 
                             <li>
-                                <a href="{{url('countries/new')}}">Crear nuevo</a>
+                                <a href="{{url('/countries/new')}}">Crear nuevo</a>
                             </li>
 
                         </ul>
@@ -88,7 +88,7 @@
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-envelope"></i><span class="sidebar-mini-hide">Contactos</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('contacts/list')}}">Listado</a>
+                                <a href="{{url('admin/contacts/list')}}">Listado</a>
                             </li>
 
                         </ul>
@@ -97,11 +97,11 @@
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span class="sidebar-mini-hide">Secciones</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('sections/list')}}">Listado</a>
+                                <a href="{{url('admin/sections/list')}}">Listado</a>
                             </li>
 
                             <li>
-                                <a href="{{url('sections/new')}}">Crear nueva</a>
+                                <a href="{{url('admin/sections/new')}}">Crear nueva</a>
                             </li>
 
                         </ul>

@@ -12,7 +12,16 @@ class CreateNewsTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('news', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name',255);
+            $table->string('cover_image',255);
+            $table->text('description');
+
+            $table->timestamps();
+            $table->softDeletes();
+
+        });
     }
 
     /**
@@ -22,6 +31,6 @@ class CreateNewsTable extends Migration
      */
     public function down()
     {
-        //
+       Schema::drop('countries');
     }
 }

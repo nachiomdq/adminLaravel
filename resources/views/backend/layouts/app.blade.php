@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.css')}}">
     <!-- Styles -->
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/oneui.css')}}">
+    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/themes/flat.min.css')}}">  
 
 
 

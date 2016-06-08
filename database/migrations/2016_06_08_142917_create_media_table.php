@@ -12,7 +12,15 @@ class CreateMediaTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('media', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('type');
+            $table->text('content');
+
+            $table->timestamps();
+            $table->softDeletes();
+
+        });
     }
 
     /**
@@ -22,6 +30,6 @@ class CreateMediaTable extends Migration
      */
     public function down()
     {
-        //
+       Schema::drop('media');
     }
 }

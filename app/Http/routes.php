@@ -18,4 +18,15 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/admin', 'AdminController@getIndex');
+
+
+Route::group(['as' => 'admin::', 'prefix' => 'admin','middleware' => ['auth', 'auth.admin']], function() {
+
+    Route::get('/', 'AdminController@getIndex');// BASE PATH ADMIN
+
+    Route::group(['prefix'=>'products','middleware' => ['auth', 'auth.admin']], function(){
+
+          Route::get('/list', 'ProductsController@getList');
+    });
+
+});

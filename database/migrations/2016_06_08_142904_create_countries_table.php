@@ -12,7 +12,15 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('countries', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name',255);
+            $table->text('description');
+
+            $table->timestamps();
+            $table->softDeletes();
+
+        });
     }
 
     /**
@@ -22,6 +30,6 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        //
+       Schema::drop('countries');
     }
 }

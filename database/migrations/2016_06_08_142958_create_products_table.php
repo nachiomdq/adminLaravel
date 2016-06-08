@@ -12,7 +12,17 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        //
+      Schema::create('products', function (Blueprint $table) {
+        $table->increments('id');
+        $table->string('name',255);
+        $table->string('cover_image',255);
+        $table->text('description');
+        $table->text('tags'); //For SEO Purposes
+
+        $table->timestamps();
+        $table->softDeletes();
+
+    });
     }
 
     /**
@@ -22,6 +32,6 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        //
+      Schema::drop('products');
     }
 }
