@@ -23,10 +23,19 @@ Route::get('/home', 'HomeController@index');
 Route::group(['as' => 'admin::', 'prefix' => 'admin','middleware' => ['auth', 'auth.admin']], function() {
 
     Route::get('/', 'AdminController@getIndex');// BASE PATH ADMIN
-
     Route::group(['prefix'=>'products','middleware' => ['auth', 'auth.admin']], function(){
 
           Route::get('/list', 'ProductsController@getList');
+    });
+
+});
+/**
+ * API PRIVADAS
+ */
+Route::group(['prefix' => 'api','middleware' => ['auth', 'auth.admin']], function() {
+
+    Route::group(['middleware' => ['auth', 'auth.admin']], function(){
+          Route::controller('products', 'API\ProductsController');
     });
 
 });

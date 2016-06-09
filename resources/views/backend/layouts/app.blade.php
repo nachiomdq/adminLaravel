@@ -13,8 +13,11 @@
     <!-- Page JS Plugins CSS -->
     <link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.css')}}">
     <!-- Styles -->
+      <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/select2/select2.min.css')}}">
+      <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/select2/select2-bootstrap.css')}}">
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/oneui.css')}}">
-    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/themes/flat.min.css')}}">  
+    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/themes/flat.min.css')}}">
+
 
 
 
@@ -30,6 +33,7 @@
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+
     <script src="{{asset('theme/src/assets/js/core/jquery.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/bootstrap.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/jquery.slimscroll.min.js')}}"></script>
@@ -37,9 +41,18 @@
     <script src="{{asset('theme/src/assets/js/core/jquery.appear.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/jquery.countTo.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/jquery.placeholder.min.js')}}"></script>
+    <script src="{{asset('theme/src/assets/js/plugins/select2/select2.full.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/js.cookie.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/app.js')}}"></script>
+    <script src="{{ asset('theme/src/assets/js/plugins/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('theme/src/assets/js/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('theme/src/assets/js/plugins/datatables-helper/js/datatables-helper.js') }}"></script>
+    <script>
+    $('.ui-datatable').dataTableHelper ()
+    </script>
+    @yield('custom-scripts')
     <!-- Page JS Plugins -->
     <script src="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.js')}}"></script>
+
 </body>
 </html>

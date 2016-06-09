@@ -15,9 +15,10 @@ class CreateProductsTable extends Migration
       Schema::create('products', function (Blueprint $table) {
         $table->increments('id');
         $table->string('name',255);
-        $table->string('cover_image',255);
-        $table->text('description');
-        $table->text('tags'); //For SEO Purposes
+        $table->string('cover_image',255)->nullable();
+        $table->text('description')->nullable();
+        $table->text('tags')->nullable(); //For SEO Purposes
+        $table->text('friendly_url'); //For SEO Purposes
 
         $table->timestamps();
         $table->softDeletes();
