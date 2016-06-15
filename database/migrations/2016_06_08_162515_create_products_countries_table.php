@@ -15,6 +15,7 @@ class CreateProductsCountriesTable extends Migration
         Schema::create('products_countries', function (Blueprint $table) {
             $table->integer('product_id')->unsigned();
             $table->integer('country_id')->unsigned();
+            $table->float('price')->nullable();
 
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('country_id')->references('id')->on('countries');

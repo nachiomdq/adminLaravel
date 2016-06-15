@@ -13,11 +13,14 @@
     <!-- Page JS Plugins CSS -->
     <link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.css')}}">
     <!-- Styles -->
-      <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/select2/select2.min.css')}}">
-      <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/select2/select2-bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.css')}}">
+    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/select2/select2.min.css')}}">
+    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/select2/select2-bootstrap.css')}}">
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/oneui.css')}}">
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/themes/flat.min.css')}}">
-
+    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/sweetalert/dist/sweetalert.css')}}">
+    <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/bootstrap-jasny/dist/css/jasny-bootstrap.min.css')}}">
+    @yield('custom-css')
 
 
 
@@ -43,6 +46,8 @@
     <script src="{{asset('theme/src/assets/js/core/jquery.placeholder.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/plugins/select2/select2.full.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/js.cookie.min.js')}}"></script>
+    <script src="{{asset('theme/src/assets/js/plugins/dropzonejs/dropzone.min.js')}}"></script>
+    <script src="{{asset('theme/src/assets/js/plugins/bootstrap-jasny/dist/js/jasny-bootstrap.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/app.js')}}"></script>
     <script src="{{ asset('theme/src/assets/js/plugins/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('theme/src/assets/js/plugins/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js') }}"></script>
@@ -53,6 +58,7 @@
     @yield('custom-scripts')
     <!-- Page JS Plugins -->
     <script src="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.js')}}"></script>
+    <script src="{{asset('theme/src/assets/js/plugins/sweetalert/dist/sweetalert.min.js')}}"></script>
 
 </body>
 </html>

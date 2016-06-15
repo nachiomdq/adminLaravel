@@ -58,7 +58,7 @@
                       <div class="col-sm-3">
                           <select class="form-control" id="status">
                               <option value="actives">Mostrar Activos</option>
-                              <option value="deletes">Mostrar eliminados</option>
+                              <option value="deleted">Mostrar eliminados</option>
 
                           </select>
                       </div>
@@ -80,10 +80,10 @@
                     data-language='{"processing": "<i class=\"fa fa-cog fa-spin fa-2x fa-fw margin-bottom\"></i>"}'
                     data-columns='[{ "data": "name"},
 																	 { "data": "description" },
-																	  {"data":"porcentaje_descuento"},
+																	  {"data":"price"},
 
-																		{"data":"dias_disponible"},
-																		{ "data": "null", "defaultContent": " <a href=\"\" class=\"btn btn-info push-5-r push-10 btn-xs actions\"><span class=\"fa fa-pencil\"></span></a>  <a href=\"\" class=\"remove-data btn btn-danger btn-xs\"><span class=\"fa fa-trash\"></span></a>  <a href=\"\" class=\"recover-data actions  btn btn-success btn-xs\"><span class=\"fa fa-recycle\"></span></a> "}]'
+
+																		{ "data": "null", "defaultContent": " <a href=\"\" class=\"btn edit-data btn-info push-5-r push-10 btn-xs actions\"><span class=\"fa fa-pencil\"></span></a>  <a href=\"\" class=\"remove-data btn btn-danger push-5-r push-10 btn-xs\"><span class=\"fa fa-trash\"></span></a>  <a href=\"\" class=\"recover-data actions  btn btn-success push-5-r push-10 btn-xs\"><span class=\"fa fa-recycle\"></span></a> "}]'
                     >
 
                 <thead>
@@ -91,9 +91,9 @@
 
                     <th>Nombre</th>
 										<th>Descripción</th>
-										<th>% descuento</th>
+										<th>Precio</th>
 
-										<th>Dias disponible</th>
+
                     <th>Opciones</th>
 
 
@@ -107,9 +107,9 @@
 
 										<th>Nombre</th>
 										<th>Descripción</th>
-										<th>% descuento</th>
+										<th>Precio</th>
 
-										<th>Dias restantes</th>
+
 
 										<th></th>
 									</tr>
@@ -128,35 +128,106 @@
 <script>
 
 var urlAPI = "{{ url('api/products') }}";
-var urlController = "{{ url('products') }}";
+var urlController = "{{ url('admin/products') }}";
 $("#categories").select2({
-  placeholder:"Seleccione una categoría"
+  placeholder:"Seleccione una categoría",
+  allowClear: true
 });
 $("#subcategories").select2({
-  placeholder:"Seleccione una categoría"
+  placeholder:"Seleccione una subcategoría",
+  allowClear: true
 });
 $('#country, #status').select2({
-  
+
 });
-$('#country, #status').change(function() {
+$('#country, #status,#categories,#subcategories').change(function() {
   reloadDataTableWithSelected();
+});
+$(document).on('click', '.remove-data', function() {
+    var id = $(this).parents('tr').attr('id');
+
+    swal({
+        title: "Eliminar?",
+        text: "Estas seguro ?",
+        type: "warning",
+        html:true,
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Si, eliminar",
+        closeOnConfirm: true,
+        showLoaderOnConfirm: true
+        },
+        function() {
+            $.ajax({
+                method: "GET",
+                url: urlAPI + '/delete/' + id,
+            })
+            .done(function(response) {
+                if (!response.success){
+                    sweetAlert("Oops...", "Something went wrong!", "error");
+                } else {
+
+                    reloadDataTableWithSelected();
+                }
+            });
+        }
+    );
+
+    return false;
+});
+$(document).on('click', '.recover-data', function() {
+    var id = $(this).parents('tr').attr('id');
+
+    swal({
+        title: "Activar?",
+        text: "Estas seguro ?",
+        type: "warning",
+        html:true,
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Si, activar",
+        closeOnConfirm: true,
+        showLoaderOnConfirm: true
+        },
+        function() {
+            $.ajax({
+                method: "GET",
+                url: urlAPI + '/recover/' + id,
+            })
+            .done(function(response) {
+                if (!response.success){
+                    sweetAlert("Oops...", "Something went wrong!", "error");
+                } else {
+
+                    reloadDataTableWithSelected();
+                }
+            });
+        }
+    );
+
+    return false;
 });
 
 function redirectUpdate() {
   $(document).on('click', '.edit-data', function() {
       var id = $(this).parents('tr').attr('id');
-      document.location.href = urlController + '/editar/' + id;
+
+      document.location.href = urlController + '/edit/' + id;
       return false;
   });
 }
 function reloadDataTableWithSelected() {
-  var pais = $('#paisSelect').val();
+  var pais = $('#country').val();
+  var category = $('#categories').val();
+  var subcategories = $('#subcategories').val();
   var active = $('#status').val();
-  reloadDataTable(pais, active);
+
+  reloadDataTable(pais, active,category,subcategories);
 }
 
-function reloadDataTable(pais, active) {
-  $('#dataList').DataTable().ajax.url(urlAPI + '/listado/' + pais + '?estado=' + active).load();
+function reloadDataTable(pais, active,categories,subcategories) {
+
+  $('#dataList').DataTable().ajax.url(urlAPI + '/list/' + pais + '?status=' + active+'&cat='+categories+'&sub='+subcategories).load();
 }
 
 function showAction(type) {

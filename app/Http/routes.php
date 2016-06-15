@@ -20,15 +20,6 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 
-Route::group(['as' => 'admin::', 'prefix' => 'admin','middleware' => ['auth', 'auth.admin']], function() {
-
-    Route::get('/', 'AdminController@getIndex');// BASE PATH ADMIN
-    Route::group(['prefix'=>'products','middleware' => ['auth', 'auth.admin']], function(){
-
-          Route::get('/list', 'ProductsController@getList');
-    });
-
-});
 /**
  * API PRIVADAS
  */
@@ -36,6 +27,26 @@ Route::group(['prefix' => 'api','middleware' => ['auth', 'auth.admin']], functio
 
     Route::group(['middleware' => ['auth', 'auth.admin']], function(){
           Route::controller('products', 'API\ProductsController');
+          Route::controller('categories', 'API\CategoriesController');
+          Route::post('media/uploadFiles', 'API\MediaController@uploadFiles');
     });
+
+});
+Route::group(['as' => 'admin::', 'prefix' => 'admin','middleware' => ['auth', 'auth.admin']], function() {
+
+    Route::get('/', 'AdminController@getIndex');// BASE PATH ADMIN
+    Route::group(['prefix'=>'products','middleware' => ['auth', 'auth.admin']], function(){
+
+          Route::get('/list', 'ProductsController@getList');
+          Route::get('/edit/{id}', 'ProductsController@getEdit');
+          Route::get('/new', 'ProductsController@getNew');
+    });
+    Route::group(['prefix'=>'categories','middleware' => ['auth', 'auth.admin']], function(){
+
+          Route::get('/list', 'CategoriesController@getList');
+          Route::get('/edit/{id}', 'CategoriesController@getEdit');
+          Route::get('/new', 'CategoriesController@getNew');
+    });
+
 
 });
