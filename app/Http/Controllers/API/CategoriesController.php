@@ -65,15 +65,16 @@ class CategoriesController extends Controller
           $collection= Categories::getCategories(
                                 $status,
                                 $filters['take'],
-                                $filters['offset']
+                                $filters['offset'],
+                                $filters['search']
                                 );
 
           $r = new ModelResponse();
 
           $r->draw = $filters['draw'];
 
-          $r->recordsTotal = Categories::getCategoriesCount($status);
-          $r->recordsFiltered = Categories::getCategoriesCount($status);
+          $r->recordsTotal = Categories::getCategoriesCount($status,$filters['search']);
+          $r->recordsFiltered = Categories::getCategoriesCount($status,$filters['search']);
           $r->success = true;
           $r->message = 'Categories List';
           $r->data = $collection;

@@ -38,7 +38,7 @@
 
                         </ul>
                     </li>
-                    <li class="{{ $bladeHelper->openStatus('categories') }}">
+                    <li class="{{ $bladeHelper->openStatus('subcategories') }} {{ $bladeHelper->openStatus('categories') }}">
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-list"></i><span class="sidebar-mini-hide">Categorías</span></a>
                         <ul>
                             <li>

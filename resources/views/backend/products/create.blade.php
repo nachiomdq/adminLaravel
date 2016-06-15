@@ -245,7 +245,7 @@ $(document).ready(function(){
                   closeOnConfirm: true },
                 function(){
                   //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                  //document.location.href = "{{ url('eventos/listado') }}";
+                  document.location.href =urlController +"/list";
 
                   myDropzone.on("sending", function(file, xhr, formData) {
                     formData.append("id", response.data.id);

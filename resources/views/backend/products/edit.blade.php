@@ -258,6 +258,7 @@ $(document).ready(function(){
 
                   });
                   myDropzone.processQueue();
+                  document.location.href =urlController +"/list";
                 });
 
 

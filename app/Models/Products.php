@@ -22,7 +22,7 @@ class Products extends Model
     public function medias() {
         return $this->belongsToMany('App\Models\Media', 'products_media', 'product_id', 'media_id');
     }
-    public static function getProductsByCountry($countryID,$status,$take,$offset,$categories=null,$subcategories=null){
+    public static function getProductsByCountry($countryID,$status,$take,$offset,$categories=null,$subcategories=null,$search =""){
 
       $query = self::select('products.id as DT_RowId', 'products.*','products_countries.price')
                  ->join('products_countries','products_countries.product_id','=','products.id')
@@ -45,6 +45,12 @@ class Products extends Model
         $query->join('subcategories', 'products_subcategories.subcategory_id' ,'=', 'subcategories.id');
         $query->where('subcategories.id','=',$subcategories);
       }
+
+      if($search!=""){
+  
+        $query->where('products.name','like','%'.$search.'%');
+      }
+
       switch ($status) {
 					case 'deleted':
 							$query->onlyTrashed();
@@ -55,8 +61,8 @@ class Products extends Model
       return $collection;
 
     }
-    public static function getProductsByCountryCount($countryID,$status,$take=null,$offset=null,$categories=null,$subcategories=null){
-      $collection = self::getProductsByCountry($countryID,$status,$take,$offset,$categories,$subcategories);
+    public static function getProductsByCountryCount($countryID,$status,$take=null,$offset=null,$categories=null,$subcategories=null,$search = ""){
+      $collection = self::getProductsByCountry($countryID,$status,$take,$offset,$categories,$subcategories,$search);
       return $collection->count();
 
     }

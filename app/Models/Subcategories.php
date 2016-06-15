@@ -12,7 +12,7 @@ class Subcategories extends Model
       return $this->belongsToMany('App\Models\Products');
     }
 
-    public static function getSubCategories($status,$take,$offset){
+    public static function getSubCategories($status,$take,$offset,$search=""){
 
       $query = self::select('subcategories.id as DT_RowId', 'subcategories.*');
       if(!is_null($take)){
@@ -20,7 +20,10 @@ class Subcategories extends Model
         $query->take($take);
         $query->offset($offset);
       }
+      if($search!=""){
 
+        $query->where('subcategories.name','like','%'.$search.'%');
+      }
       switch ($status) {
 
           case 'deleted':
@@ -33,8 +36,8 @@ class Subcategories extends Model
       return $collection;
 
     }
-    public static function getSubCategoriesCount($status,$take=null,$offset=null){
-      $collection = self::getSubCategories($status,$take,$offset);
+    public static function getSubCategoriesCount($status,$take=null,$offset=null,$search=""){
+      $collection = self::getSubCategories($status,$take,$offset,$search);
       return $collection->count();
 
     }
