@@ -1,4 +1,4 @@
-
+@inject('bladeHelper', 'App\Helpers\BladeHelper')
 <nav id="sidebar">
     <!-- Sidebar Scroll Container -->
     <div id="sidebar-scroll">
@@ -25,35 +25,35 @@
                         <a href="index.html"><i class="si si-speedometer"></i><span class="sidebar-mini-hide">Dashboard</span></a>
                     </li>
                     <li class="nav-main-heading"><span class="sidebar-mini-hide">Menú</span></li>
-                    <li>
+                    <li class="{{ $bladeHelper->openStatus('products') }}">
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-layers"></i><span class="sidebar-mini-hide">Productos</span></a>
                         <ul>
-                            <li>
-                                <a href="{{url('admin/products/list')}}">Listado</a>
+                            <li >
+                                <a class="{{ $bladeHelper->selectPage('products/list') }}" href="{{url('admin/products/list')}}">Listado</a>
                             </li>
 
                             <li>
-                                <a href="{{url('admin/products/new')}}">Crear nuevo</a>
+                                <a class="{{ $bladeHelper->selectPage('products/new') }}" href="{{url('admin/products/new')}}">Crear nuevo</a>
                             </li>
 
                         </ul>
                     </li>
-                    <li>
+                    <li class="{{ $bladeHelper->openStatus('categories') }}">
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-list"></i><span class="sidebar-mini-hide">Categorías</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('admin/categories/list')}}">Listado de categorías</a>
+                                <a class="{{ $bladeHelper->selectPage('categories/list') }}" href="{{url('admin/categories/list')}}">Listado de categorías</a>
                             </li>
 
                             <li>
-                                <a href="{{url('admin/categories/new')}}">Crear nueva categoría</a>
+                                <a class="{{ $bladeHelper->selectPage('categories/new') }}" href="{{url('admin/categories/new')}}">Crear nueva categoría</a>
                             </li>
                             <li>
-                                <a href="{{url('admin/subcategories/list')}}">Listado de subcategorías</a>
+                                <a class="{{ $bladeHelper->selectPage('subcategories/list') }}" href="{{url('admin/subcategories/list')}}">Listado de subcategorías</a>
                             </li>
 
                             <li>
-                                <a href="{{url('admin/subcategories/new')}}">Crear nueva subcategorías</a>
+                                <a class="{{ $bladeHelper->selectPage('subcategories/new') }}" href="{{url('admin/subcategories/new')}}">Crear nueva subcategorías</a>
                             </li>
 
                         </ul>

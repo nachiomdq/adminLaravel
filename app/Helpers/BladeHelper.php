@@ -77,7 +77,7 @@ class BladeHelper
 
         return "$select";
     }
-    public static function selectPage4($page, $last = false)
+    public static function openStatus($page, $last = false)
     {
         $request = request();
 
