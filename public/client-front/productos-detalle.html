@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Neumáticos Corral</title>
+<link href="styles/corral-common.css" rel="stylesheet" type="text/css">
+<link href="styles/corral-productos-detalle.css" rel="stylesheet" type="text/css">
+
+
+<script src="scripts/jquery-1.4.2.js"></script>
+<script src="scripts/jquery.cycle.all.js"></script>
+<script src="scripts/jquery.easing.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="map/caba.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	
+	$("#menu-top").css("top", "-110px" );
+
+ 
+	$(window).scroll(function() {
+	
+	if ($(window).scrollTop() >= 150){
+	
+				$("#menu-top").css("top", "0px" );
+			
+		
+	    } else {
+	
+				$("#menu-top").css("top", "-110px" );
+	
+	    }
+	
+	
+	});
+
+
+
+});
+
+
+
+</script>
+
+</head>
+
+<body>
+
+	<div id="menu-top">
+		<div class="top">
+			<div class="wp">
+				<div class="logo">
+					<img src="images/header-logo.png" alt="header-logo" width="88" height="53">
+				</div>
+				<div class="menu">
+					<ul>
+						<li><a href="contacto.php">Contacto</a></li>
+						<li><a href="sucursales.php">Sucursales</a></li>
+						<li><a href="precurados.php">Precurados</a></li>
+						<li><a href="empresa.php">Empresa</a></li>
+						<li><a href="informacion-tecnica.php">Inf. Técnica</a></li>
+						<li><a href="productos.php" class="active">Productos</a></li>
+						<li><a href="index.php">Home</a></li>
+					</ul>
+				</div>
+			</div>			
+		</div>					
+		<div class="bottom">
+			<div class="wp">
+				<div class="seccion">
+					<ul>
+						<li>
+							<a href="#" class="active">Auto</a>
+						</li>
+						<li>
+							<a href="#">Camioneta</a>
+						</li>
+						<li>
+							<a href="#">Camión</a>
+						</li>
+						<li>
+							<a href="#">Agrícola</a>
+						</li>
+						<li>
+							<a href="#">Industrial</a>
+						</li>
+						<li>
+							<a href="#">OTR</a>
+						</li>
+						<li>
+							<a href="#">Cámaras</a>
+						</li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="top">
+		<div class="wp">
+			<div class="pais">
+				<ul>
+					<li>
+						<a href="#" class="active">ARGENTINA</a>
+					</li>
+					<li>
+						<a href="#">URUGUAY</a>
+					</li>
+				</ul>
+			</div>
+			<div class="submenu">
+				<ul>
+					<li>
+						<a href="contacto.php">CONTACTO</a>
+					</li>
+					<li>
+						<a href="sucursales.php">SUCURSALES</a>
+					</li>
+				</ul>
+			</div>
+			<div class="pirelli">
+				<img src="images/logo-pirelli.png" alt="logo-pirelli" width="88" height="22">
+			</div>
+		</div>
+	</div>
+
+	<div class="header">
+		
+		<div class="wp">
+			<div class="logo">
+				<img src="images/header-logo.png" alt="header-logo" width="150" height="90">
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="precurados.php" style="padding-right:0px;">Precurados</a>
+					</li>
+					<li>
+						<a href="empresa.php">Empresa</a>
+					</li>
+					<li>
+						<a href="informacion-tecnica.php">Inf. Técnica</a>
+					</li>
+					<li>
+						<a href="productos.php" class="active">Productos</a>
+					</li>
+					<li>
+						<a href="index.php">Home</a>
+					</li>
+				</ul>
+			</div>			
+		</div>
+		
+		
+	</div>
+
+
+	<div class="filtros">
+		
+		<div class="wp">
+			<ul>
+				<li>
+					<a href="#" class="active">Auto</a>
+				</li>
+				<li>
+					<a href="#">Camioneta</a>
+				</li>
+				<li>
+					<a href="#">Camión</a>
+				</li>
+				<li>
+					<a href="#">Agrícola</a>
+				</li>
+				<li>
+					<a href="#">Industrial</a>
+				</li>
+				<li>
+					<a href="#">OTR</a>
+				</li>
+				<li>
+					<a href="#">Cámaras</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+	</div>
+
+
+	<div class="titular" style="">
+		<div class="wp">
+			<div class="titulo">
+				<h2>Pirelli Scorpion <b>ATR</b></h2>
+				<h3>Control Todo Terreno</h3>
+			</div>
+		</div>		
+	</div>
+
+	<div class="cuerpo">
+		<div class="wp">
+			<div class="col">
+				<div class="descripcion">
+					<p class="copete">
+	Scorpion ATR es un producto desarrollado para camionetas, utilitarios deportivos y automóviles con estilo off-road.<br>
+	
+	Es el neumático perfecto para los que enfrentan el día a día en la ciudad y les gusta disfrutar un fin de semana off-road en el campo.
+					</p>
+
+					<p class="texto">
+Con diseño innovador y agresivo, Scorpion ATR  presenta el menor nivel de ruido y un 25% más de rendimiento por kilómetro en relación a su antecesor, además de una excelente resistencia en la utilización off-road. 
+					</p>
+
+										
+				</div>
+
+			</div>
+			
+			<div class="coli">
+				<div class="titulo">
+					<h2>Características</h2>
+				</div>
+					<ul>
+						<li>
+							Excelente Rendimiento por Kilómetro  25% superior a su antecesor (SC-A/T).							
+						</li>
+						<li>
+							Menor nivel de ruido (hasta un 12% inferior en relación al antecesor).						
+						</li>
+						<li>
+							Excelente desempeño off-road (tierra, barro, arena, piedras).						
+						</li>
+						<li>
+							Excelente desempeño en piso mojado (facilidad de conducción, frenado y resistencia al acuaplaning). 						
+						</li>
+						<li>
+							Diseño innovador y agresivo.						
+						</li>
+						<li>
+							Protección de la llanta contra impactos y destalonamiento.						
+						</li>
+						
+					</ul>
+				
+			</div>			
+
+			<div class="cold">
+				<div class="titulo">
+					<h2>Medidas Disponibles</h2>
+				</div>
+				
+			</div>			
+
+		</div>
+	</div>
+
+	<div class="destacado">
+		<div class="wp">
+			<div class="row">
+			<div class="col" style="margin-right:4%;">
+				<div class="titulo">
+					<div class="icono">
+						<img src="images/h2-icon-star.jpg" alt="h2-icon-star" width="45" height="45">
+					</div>
+					<h2>Productos Relacionados</h2>
+				</div>
+				<div class="lista">
+					<ul>
+						<li>
+							<div class="imagen">
+								<img src="productos/p1.png" alt="p1" width="260" height="260">
+							</div>
+							<h3>Pirelli Scorpion ATR</h3>
+							<a href="#">Ir al producto</a>
+						</li>
+						<li>
+							<div class="imagen">
+								<img src="productos/p2.png" alt="p1" width="260" height="260">
+							</div>
+							<h3>Pirelli P7 Cinturato</h3>
+							<a href="#">Ir al producto</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="col">
+				<div class="titulo">
+					<div class="icono">
+						<img src="images/h2-icon-promo.jpg" alt="h2-icon-star" width="45" height="45">
+					</div>
+					<h2>Promociones</h2>					
+				</div>
+
+				<div class="lista">
+					<ul>
+						<li>
+							<div class="imagen">
+								<img src="promociones/promo1.png" alt="p1" width="260" height="260">
+							</div>
+							<p> <i class="fa fa-heart"></i>Sólo para CABA y Gran Buenos Aires.</p>
+							<a href="#">Ver Promoción</a>
+						</li>
+						<li>
+							<div class="imagen">
+								<img src="promociones/promo2.png" alt="p1" width="260" height="260">
+							</div>
+							<p>En neumáticos para auto y camioneta.</p>
+							<a href="#">Ver Promoción</a>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="tip">
+		<div class="wp">
+			<div class="titulo">
+				<div class="icono">
+					<img src="images/h2-icon-tip.jpg" alt="h2-icon-star" width="45" height="45">
+				</div>
+				<h2>Sabías que</h2>
+			</div>
+			<h4>Los neumáticos tienen fecha de vencimiento...</h4>
+			<p>Luego de 5 años de fabricados, los neumáticos pierden propiedades fundamentales a la hora de brindar seguridad a tu vehículo, es por eso que
+recomendamos hacer una revisión en un taller especializado para chequear el estado de los mismos.</p>
+		</div>
+	</div>
+
+	<div class="sucursales">
+		<div class="wp">
+			<h2><a href="#">encuentra tu sucursal más cercana aquí</a></h2>
+		</div>		
+	</div>
+	
+	<div class="mapa">
+		<div id="map-canvas">
+		</div>
+	</div>
+	
+
+	<? include_once("footer.php");?>
+
+
+
+
+</body>
+</html>

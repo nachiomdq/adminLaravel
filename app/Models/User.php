@@ -1,7 +1,7 @@
 <?php
 
-namespace App;
-
+namespace App\Models;
+use App\Enums\UserType;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -23,4 +23,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isSuper() {
+        if ($this->user_type == UserType::SuperAdmin)
+            return true;
+        return false;
+    }
+    public function isAdmin() {
+        if ($this->user_type == UserType::Admin)
+            return true;
+        return false;
+    }
 }
