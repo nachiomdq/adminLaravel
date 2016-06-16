@@ -73,8 +73,8 @@ class SubCategoriesController extends Controller
 
           $r->draw = $filters['draw'];
 
-          $r->recordsTotal = Subcategories::getSubCategoriesCount($status,$filters['search']);
-          $r->recordsFiltered = Subcategories::getSubCategoriesCount($status,$filters['search']);
+          $r->recordsTotal = Subcategories::getSubCategoriesCount($status,null,$filters['offset'],$filters['search']);
+          $r->recordsFiltered = Subcategories::getSubCategoriesCount($status,null,$filters['offset'],$filters['search']);
           $r->success = true;
           $r->message = 'Categories List';
           $r->data = $collection;

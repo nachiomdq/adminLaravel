@@ -10,4 +10,8 @@ class Countries extends Model
     {
       return $this->belongsToMany('App\Models\Products');
     }
+    public function branchs()
+    {
+      return $this->belongsToMany('App\Models\Branchs');
+    }
 }

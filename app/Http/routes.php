@@ -29,6 +29,7 @@ Route::group(['prefix' => 'api','middleware' => ['auth', 'auth.admin']], functio
           Route::controller('products', 'API\ProductsController');
           Route::controller('categories', 'API\CategoriesController');
           Route::controller('subcategories', 'API\SubCategoriesController');
+          Route::controller('branchs', 'API\BranchsController');
           Route::post('media/uploadFiles', 'API\MediaController@uploadFiles');
     });
 
@@ -53,6 +54,12 @@ Route::group(['as' => 'admin::', 'prefix' => 'admin','middleware' => ['auth', 'a
           Route::get('/list', 'SubCategoriesController@getList');
           Route::get('/edit/{id}', 'SubCategoriesController@getEdit');
           Route::get('/new', 'SubCategoriesController@getNew');
+    });
+    Route::group(['prefix'=>'branch','middleware' => ['auth', 'auth.admin']], function(){
+
+          Route::get('/list', 'BranchsController@getList');
+          Route::get('/edit/{id}', 'BranchsController@getEdit');
+          Route::get('/new', 'BranchsController@getNew');
     });
 
 

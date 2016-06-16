@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Neumáticos Corral</title>
+<link href="styles/corral-common.css" rel="stylesheet" type="text/css">
+<link href="styles/corral-sucursales.css" rel="stylesheet" type="text/css">
+
+
+<script src="scripts/jquery-1.4.2.js"></script>
+<script src="scripts/jquery.cycle.all.js"></script>
+<script src="scripts/jquery.easing.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="map/caba.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	
+	$("#menu-top").css("top", "-110px" );
+
+ 
+	$(window).scroll(function() {
+	
+	if ($(window).scrollTop() >= 150){
+	
+				$("#menu-top").css("top", "0px" );
+			
+		
+	    } else {
+	
+				$("#menu-top").css("top", "-110px" );
+	
+	    }
+	
+	
+	});
+
+
+
+});
+
+
+
+</script>
+
+</head>
+
+<body>
+
+	<div id="menu-top">
+		<div class="top">
+			<div class="wp">
+				<div class="logo">
+					<img src="images/header-logo.png" alt="header-logo" width="88" height="53">
+				</div>
+				<div class="menu">
+					<ul>
+						<li><a href="contacto.php">Contacto</a></li>
+						<li><a href="sucursales.php" class="active">Sucursales</a></li>
+						<li><a href="precurados.php">Precurados</a></li>
+						<li><a href="empresa.php">Empresa</a></li>
+						<li><a href="informacion-tecnica.php">Inf. Técnica</a></li>
+						<li><a href="productos.php">Productos</a></li>
+						<li><a href="index.php">Home</a></li>
+					</ul>
+				</div>
+			</div>			
+		</div>					
+		<div class="bottom">
+			<div class="wp">
+				<div class="seccion">
+					<ul>
+						<li>
+							<a href="#" class="active">Buenos Aires</a>
+						</li>
+						<li>
+							<a href="#">Córdoba</a>
+						</li>
+						<li>
+							<a href="#">San Luis</a>
+						</li>
+						<li>
+							<a href="#">Mendoza</a>
+						</li>
+						<li>
+							<a href="#">Neuquén</a>
+						</li>
+						<li>
+							<a href="#">Jujuy</a>
+						</li>
+						<li>
+							<a href="#">Salta</a>
+						</li>
+						<li>
+							<a href="#">Tucumán</a>
+						</li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="top">
+		<div class="wp">
+			<div class="pais">
+				<ul>
+					<li>
+						<a href="#" class="active">ARGENTINA</a>
+					</li>
+					<li>
+						<a href="#">URUGUAY</a>
+					</li>
+				</ul>
+			</div>
+			<div class="submenu">
+				<ul>
+					<li>
+						<a href="contacto.php">CONTACTO</a>
+					</li>
+					<li>
+						<a href="sucursales.php" class="active">SUCURSALES</a>
+					</li>
+				</ul>
+			</div>
+			<div class="pirelli">
+				<img src="images/logo-pirelli.png" alt="logo-pirelli" width="88" height="22">
+			</div>
+		</div>
+	</div>
+
+	<div class="header">
+		
+		<div class="wp">
+			<div class="logo">
+				<img src="images/header-logo.png" alt="header-logo" width="150" height="90">
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="precurados.php" style="padding-right:0px;">Precurados</a>
+					</li>
+					<li>
+						<a href="empresa.php">Empresa</a>
+					</li>
+					<li>
+						<a href="informacion-tecnica.php">Inf. Técnica</a>
+					</li>
+					<li>
+						<a href="productos.php">Productos</a>
+					</li>
+					<li>
+						<a href="index.php">Home</a>
+					</li>
+				</ul>
+			</div>			
+		</div>
+		
+		
+	</div>
+
+
+	<div class="filtros">
+		
+		<div class="wp">
+			<ul>
+				<li>
+					<a href="#" class="active">Buenos Aires</a>
+				</li>
+				<li>
+					<a href="#">Córdoba</a>
+				</li>
+				<li>
+					<a href="#">San Luis</a>
+				</li>
+				<li>
+					<a href="#">Mendoza</a>
+				</li>
+				<li>
+					<a href="#">Neuquén</a>
+				</li>
+				<li>
+					<a href="#">Jujuy</a>
+				</li>
+				<li>
+					<a href="#">Salta</a>
+				</li>
+				<li>
+					<a href="#">Tucumán</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+	</div>
+
+
+
+	<div class="cuerpo">
+		<div class="wp">
+			<div class="coli">
+				<div class="titulo">
+					<h2>Mapa</h2>
+				</div>
+				<div class="lista">
+					<div class="mapa">
+						<div id="map-canvas">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="cold">
+				<div class="titulo">
+					<h2>Listado de Sucursales</h2>
+				</div>
+				<div class="lista">
+					<ul>
+						<li>
+							<h3>Sucursal Acassuso</h3>
+							<h4>Casa Central</h4>
+							<p>
+								Av. Santa Fé 544<br>
+								Acassuso - Buenos Aires<br>
+								Tel: (011) - 4755 - 2233<br>
+								<a href="#">acassuso@neumaticoscorral.com.ar</a>	
+							</p>
+							
+							
+						</li>
+						<li>
+							<h3>Sucursal Pilar</h3>
+							<h4>Alineación / Balanceo / Tren Delantero</h4>
+							<p>
+								Las Magnolias 669, Barrio La Esmeralda<br>
+								Pilar - Buenos Aires<br>
+								Tel: (02322) - 471852<br>								
+								<a href="#">pilar@neumaticoscorral.com.ar</a>	
+							</p>
+							
+						</li>
+						<li>
+							<h3>Novateck Buenos Aires</h3>
+							<h4>Planta de Precurado</h4>
+							<p>
+								Cruce de Rutas 24 y 25<br>
+								Parque Industrial Provado del Oeste<br>
+								Moreno<br>								
+								<a href="#">novateck@neumaticoscorral.com.ar</a>	
+							</p>
+							
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="tip">
+		<div class="wp">
+			<div class="titulo">
+				<div class="icono">
+					<img src="images/h2-icon-tip.jpg" alt="h2-icon-star" width="45" height="45">
+				</div>
+				<h2>Sabías que</h2>
+			</div>
+			<h4>Los neumáticos tienen fecha de vencimiento...</h4>
+			<p>Luego de 5 años de fabricados, los neumáticos pierden propiedades fundamentales a la hora de brindar seguridad a tu vehículo, es por eso que
+recomendamos hacer una revisión en un taller especializado para chequear el estado de los mismos.</p>
+		</div>
+	</div>
+	
+
+	<? include_once("footer.php");?>
+
+
+
+
+</body>
+</html>

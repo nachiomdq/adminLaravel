@@ -47,7 +47,7 @@ class Products extends Model
       }
 
       if($search!=""){
-  
+
         $query->where('products.name','like','%'.$search.'%');
       }
 
@@ -61,7 +61,8 @@ class Products extends Model
       return $collection;
 
     }
-    public static function getProductsByCountryCount($countryID,$status,$take=null,$offset=null,$categories=null,$subcategories=null,$search = ""){
+    public static function getProductsByCountryCount($countryID,$status,$take=null,$offset=null,$categories=null,$subcategories=null,$search= ""){
+      
       $collection = self::getProductsByCountry($countryID,$status,$take,$offset,$categories,$subcategories,$search);
       return $collection->count();
 

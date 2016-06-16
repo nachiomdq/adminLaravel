@@ -58,7 +58,7 @@
 
                         </ul>
                     </li>
-                    <li>
+                    <li class="hide">
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-newspaper-o"></i><span class="sidebar-mini-hide">Noticias</span></a>
                         <ul>
                             <li>
@@ -71,29 +71,31 @@
 
                         </ul>
                     </li>
-                    <li>
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pointer"></i><span class="sidebar-mini-hide">Países</span></a>
+                  <li class="{{ $bladeHelper->openStatus('branch') }} }">
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-pointer"></i><span class="sidebar-mini-hide">Sucursales</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('/countries/list')}}">Listado</a>
+                                  <a class="{{ $bladeHelper->selectPage('branch/list') }}" href="{{url('admin/branch/list')}}">Listado</a>
                             </li>
-
                             <li>
-                                <a href="{{url('/countries/new')}}">Crear nuevo</a>
+                                  <a class="{{ $bladeHelper->selectPage('branch/new') }}" href="{{url('admin/branch/new')}}">Crear nueva</a>
                             </li>
 
                         </ul>
                     </li>
-                    <li>
-                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-envelope"></i><span class="sidebar-mini-hide">Contactos</span></a>
+                  <li class="hide">
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-envelope"></i><span class="sidebar-mini-hide">Sucursales</span></a>
                         <ul>
                             <li>
-                                <a href="{{url('admin/contacts/list')}}">Listado</a>
+                                <a href="{{url('admin/branch/list')}}">Listado</a>
+                            </li>
+                            <li>
+                                <a href="{{url('admin/branch/new')}}">Crear nueva</a>
                             </li>
 
                         </ul>
                     </li>
-                    <li>
+                    <li class="hide">
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-book-open"></i><span class="sidebar-mini-hide">Secciones</span></a>
                         <ul>
                             <li>
@@ -106,8 +108,8 @@
 
                         </ul>
                     </li>
-                    <li class="nav-main-heading"><span class="sidebar-mini-hide">Apps</span></li>
-                    <li>
+                    <li class="hide nav-main-heading"><span class="sidebar-mini-hide">Apps</span></li>
+                    <li class="hide">
                         <a href="frontend_home.html"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Frontend</span></a>
                     </li>
                 </ul>

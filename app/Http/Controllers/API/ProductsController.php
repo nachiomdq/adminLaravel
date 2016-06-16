@@ -145,7 +145,7 @@ class ProductsController extends Controller
       try {
 
           $filters = ParseParameterFilters::getFilters();
-        
+
           $status = $request->has('status') ? $request->input('status') : null;
           $category = $request->has('cat') ? $request->input('cat') : null;
           $subcategory = $request->has('sub') ? $request->input('sub') : null;
@@ -162,8 +162,8 @@ class ProductsController extends Controller
 
           $r->draw = $filters['draw'];
 
-          $r->recordsTotal = Products::getProductsByCountryCount($countryID,$status,$category,$subcategory,$filters['search']);
-          $r->recordsFiltered = Products::getProductsByCountryCount($countryID,$status,$category,$subcategory,$filters['search']);
+          $r->recordsTotal = Products::getProductsByCountryCount($countryID,$status,null,$filters['offset'],$category,$subcategory,$filters['search']);
+          $r->recordsFiltered = Products::getProductsByCountryCount($countryID,$status,null,$filters['offset'],$category,$subcategory,$filters['search']);
           $r->success = true;
           $r->message = 'Products List';
           $r->data = $collection;
