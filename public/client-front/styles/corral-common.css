@@ -1,11 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
 	margin: 0px;
+	  font-family: 'Open Sans';
 	background-color: #faf7f3;
 }
 
@@ -13,7 +12,7 @@ body {
 	width: 90%;
 	max-width: 1240px;
 	height: auto;
-	margin: 0px auto;	
+	margin: 0px auto;
 }
 
 #menu-top {
@@ -84,8 +83,8 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-transform: uppercase;
-	text-decoration: none;	
-	padding-top: 26px;	
+	text-decoration: none;
+	padding-top: 26px;
 }
 
 #menu-top .menu ul li a:hover {
@@ -96,8 +95,8 @@ body {
 	font-size: 10px;
 	color: #ef4e37;
 	text-transform: uppercase;
-	text-decoration: none;	
-	padding-top: 26px;	
+	text-decoration: none;
+	padding-top: 26px;
 }
 
 #menu-top .menu ul li a:visited {
@@ -108,8 +107,8 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-transform: uppercase;
-	text-decoration: none;	
-	padding-top: 26px;	
+	text-decoration: none;
+	padding-top: 26px;
 }
 
 #menu-top .menu ul li a:visited:hover {
@@ -120,8 +119,8 @@ body {
 	font-size: 10px;
 	color: #ef4e37;
 	text-transform: uppercase;
-	text-decoration: none;	
-	padding-top: 26px;	
+	text-decoration: none;
+	padding-top: 26px;
 }
 
 #menu-top .menu ul li a.active {
@@ -132,8 +131,8 @@ body {
 	font-size: 10px;
 	color: #ef4e37;
 	text-transform: uppercase;
-	text-decoration: none;	
-	padding-top: 26px;	
+	text-decoration: none;
+	padding-top: 26px;
 }
 
 #menu-top .bottom {
@@ -187,7 +186,7 @@ body {
 #menu-top .bottom .seccion ul li a:link {
 	float: left;
 	width: 100%;
-	padding-top: 14px;	
+	padding-top: 14px;
 	text-align: center;
 	margin: 0px;
 	font-family: "Montserrat" sans-serif;
@@ -195,59 +194,59 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-transform: uppercase;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 #menu-top .bottom .seccion ul li a:hover {
 	float: left;
 	width: 100%;
-	padding-top: 14px;	
+	padding-top: 14px;
 	margin: 0px;
 	font-family: "Montserrat" sans-serif;
 	font-weight: 400;
 	font-size: 10px;
 	color: #fff;
 	text-transform: uppercase;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 #menu-top .bottom .seccion ul li a:visited {
 	float: left;
 	width: 100%;
-	padding-top: 14px;	
+	padding-top: 14px;
 	margin: 0px;
 	font-family: "Montserrat" sans-serif;
 	font-weight: 400;
 	font-size: 10px;
 	color: #424140;
 	text-transform: uppercase;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 #menu-top .bottom .seccion ul li a:visited:hover {
 	float: left;
 	width: 100%;
-	padding-top: 14px;	
+	padding-top: 14px;
 	margin: 0px;
 	font-family: "Montserrat" sans-serif;
 	font-weight: 400;
 	font-size: 10px;
 	color: #fff;
 	text-transform: uppercase;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 #menu-top .bottom .seccion ul li a.active {
 	float: left;
 	width: 100%;
-	padding-top: 14px;	
+	padding-top: 14px;
 	margin: 0px;
 	font-family: "Montserrat" sans-serif;
 	font-weight: 400;
 	font-size: 10px;
 	color: #fff;
 	text-transform: uppercase;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 
@@ -297,7 +296,7 @@ body {
 	font-size: 10px;
 	color: #aaa7a5;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .pais ul li a:hover {
@@ -307,7 +306,7 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .pais ul li a:visited {
@@ -317,7 +316,7 @@ body {
 	font-size: 10px;
 	color: #aaa7a5;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .pais ul li a:visited:hover {
@@ -327,7 +326,7 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .pais ul li a.active {
@@ -337,7 +336,7 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-decoration: none;
-	margin-top: 19px;	
+	margin-top: 19px;
 }
 
 
@@ -345,7 +344,7 @@ body {
 	float: right;
 	margin-right: 20px;
 	margin-top: 14px;
-	
+
 }
 
 
@@ -392,7 +391,7 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .submenu ul li a:hover {
@@ -402,7 +401,7 @@ body {
 	font-size: 10px;
 	color: #ef4e37;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .submenu ul li a:visited {
@@ -412,7 +411,7 @@ body {
 	font-size: 10px;
 	color: #424140;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .submenu ul li a:visited:hover {
@@ -422,7 +421,7 @@ body {
 	font-size: 10px;
 	color: #ef4e37;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 .top .submenu ul li a.active {
@@ -432,7 +431,7 @@ body {
 	font-size: 10px;
 	color: #ef4e37;
 	text-decoration: none;
-	margin-top: 19px;		
+	margin-top: 19px;
 }
 
 
@@ -485,28 +484,28 @@ body {
 	text-decoration: none;
 	font-family: "Open Sans" sans-serif;
 	font-size: 10px;
-	color: #fff;	
+	color: #fff;
 }
 
 .footer .menu ul li a:hover {
 	text-decoration: none;
 	font-family: "Open Sans" sans-serif;
 	font-size: 10px;
-	color: #f7cc00;	
+	color: #f7cc00;
 }
 
 .footer .menu ul li a:visited {
 	text-decoration: none;
 	font-family: "Open Sans" sans-serif;
 	font-size: 10px;
-	color: #fff;	
+	color: #fff;
 }
 
 .footer .menu ul li a:visited:hover {
 	text-decoration: none;
 	font-family: "Open Sans" sans-serif;
 	font-size: 10px;
-	color: #f7cc00;	
+	color: #f7cc00;
 }
 
 
@@ -523,19 +522,5 @@ body {
 	text-decoration: none;
 	font-family: "Open Sans" sans-serif;
 	font-size: 10px;
-	color: #fff;	
+	color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
