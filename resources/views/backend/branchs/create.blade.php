@@ -37,17 +37,18 @@
                   </div>
                 </div>
 
-               <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                      <div class="col-xs-12">
-                        <label for="name">Subtitulo</label>
-                        <input class="form-control input-lg" type="text" id="subtitle" name="subtitle" value="">
-                      </div>
-
+             <div class="row">
+              <div class="col-sm-12">
+                  <div class="form-group">
+                    <div class="col-xs-12">
+                      <label for="name">Subtitulo</label>
+                      <input class="form-control input-lg" type="text" id="subtitle" name="subtitle" value="">
                     </div>
+
                   </div>
                 </div>
+              </div>
+
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -60,24 +61,40 @@
                     </div>
                   </div>
                 </div>
-               <div class="row">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                      <div class="col-xs-12">
-                        <label for="name">Países</label>
-                        <select class="form-control" id="countries"  name="countries[]" multiple="multiple">
-                           <option></option>
-                           @foreach($countries as $country)
-                             <option value="{{$country->id}}">{{$country->name}}</option>
-                           @endforeach
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
+                       <div class="col-xs-12">
+                         <label for="name">País</label>
+                         <select class="form-control" id="countries"  name="countries" >
+                            <option></option>
+                            @foreach($countries as $country)
+                              <option value="{{$country->id}}">{{$country->name}}</option>
+                            @endforeach
 
-                        </select>
-                      </div>
+                         </select>
+                       </div>
 
-                    </div>
-                  </div>
-                </div>
+                     </div>
+                   </div>
+                 </div>
+                  <div class="row">
+                   <div class="col-sm-12">
+                       <div class="form-group">
+                         <div class="col-xs-12">
+                           <label for="name">Provincia</label>
+                             <select class="form-control" id="states"  name="states" >
+                                <option></option>
+                                @foreach($states as $state)
+                                  <option value="{{$state->id}}">{{$state->name}}</option>
+                                @endforeach
 
+                             </select>
+                         </div>
+
+                       </div>
+                     </div>
+                   </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -135,8 +152,12 @@ var urlController = "{{ url('admin/branch') }}";
 $(document).ready(function(){
 
   $("#countries").select2({
-    placeholder:"Países",
-    allowClear: true
+    placeholder:"País",
+    allowClear: false
+  });
+  $("#states").select2({
+    placeholder:"Provincia",
+    allowClear: false
   });
 
   $("#name").keyup(function(){

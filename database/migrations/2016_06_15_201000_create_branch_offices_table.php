@@ -18,7 +18,12 @@ class CreateBranchOfficesTable extends Migration
         $table->text('description');
         $table->text('latitude'); //For SEO Purposes
         $table->text('longitude'); //For SEO Purposes
+        $table->integer('state_id')->unsigned();
+        $table->integer('country_id')->unsigned();
+        $table->string('subtitle',255)->nullable();
 
+        $table->foreign('state_id')->references('id')->on('states');
+        $table->foreign('country_id')->references('id')->on('countries');
         $table->timestamps();
         $table->softDeletes();
 

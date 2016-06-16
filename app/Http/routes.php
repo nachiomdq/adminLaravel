@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/', 'FrontEnd\HomeController@getIndex');// BASE PATH ADMIN
+Route::get('/sucursales', 'FrontEnd\BranchController@getIndex');// BASE PATH ADMIN
+Route::get('/productos', 'FrontEnd\ProductsController@getIndex');// BASE PATH ADMIN
 
 /**
  * API PRIVADAS

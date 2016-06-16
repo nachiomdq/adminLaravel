@@ -48,7 +48,32 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
+                       <div class="col-xs-12">
+                         <label for="name">Imágen de portada</label>
+                           <!-- Summernote Container -->
 
+                           <div class="fileinput fileinput-new" data-provides="fileinput">
+                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;clear:both">
+                               <img src="http://placehold.it/200x150">
+
+                             </div>
+                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+
+
+                             </div>
+                             <div>
+                               <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="coverimage"></span>
+                               <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                             </div>
+                           </div>
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">

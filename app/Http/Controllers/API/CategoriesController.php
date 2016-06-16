@@ -98,6 +98,15 @@ class CategoriesController extends Controller
           $element->name = $data['name'];
           $element->description = $data['descripcion'];
           $element->friendly_url = $data['friendly_url'];
+          if($request->file('coverimage')){
+            $name = time()."_".$request->file('coverimage')->getClientOriginalName();
+            $element->cover_image =$name;
+            $request->file('coverimage')->move(
+                 base_path() . '/public/storage/categories/', $name
+            );
+
+
+          }
           $element->save();
 
           $r = new ApiResponse();
@@ -123,6 +132,15 @@ class CategoriesController extends Controller
           $element->name = $data['name'];
           $element->description = $data['descripcion'];
           $element->friendly_url = $data['friendly_url'];
+          if($request->file('coverimage')){
+            $name = time()."_".$request->file('coverimage')->getClientOriginalName();
+            $element->cover_image =$name;
+            $request->file('coverimage')->move(
+                 base_path() . '/public/storage/categories/', $name
+            );
+
+
+          }
           $element->save();
 
 

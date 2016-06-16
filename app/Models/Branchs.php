@@ -10,15 +10,19 @@ class Branchs extends Model
   protected $table = 'branch_offices';
   public function countries()
   {
-    return $this->belongsToMany('App\Models\Countries','branch_countries','branch_id','country_id');
+    return $this->belongsTo('App\Models\Countries','country_id');
+  }
+  public function states()
+  {
+    return $this->belongsTo('App\Models\States','state_id');
   }
   public static function getBranchs($countryID,$status,$take,$offset,$search=""){
 
     $query = self::select('branch_offices.id as DT_RowId', 'branch_offices.*')
-                   ->join('branch_countries','branch_countries.branch_id','=','branch_offices.id')
-                   ->join('countries', 'countries.id' ,'=', 'branch_countries.country_id')
 
-                   ->where('countries.id','=',$countryID);;
+                   ->join('countries', 'countries.id' ,'=', 'branch_offices.country_id')
+
+                   ->where('branch_offices.country_id','=',$countryID);;
 
     if(!is_null($take)){
 

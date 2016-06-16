@@ -36,17 +36,18 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                 <div class="col-sm-12">
-                     <div class="form-group">
-                       <div class="col-xs-12">
-                         <label for="name">Subtitulo</label>
-                         <input class="form-control input-lg" type="text" id="subtitle" name="subtitle" value="{{$branch->subtitle}}">
-                       </div>
-
+              <div class="row">
+               <div class="col-sm-12">
+                   <div class="form-group">
+                     <div class="col-xs-12">
+                       <label for="name">Subtitulo</label>
+                       <input class="form-control input-lg" type="text" id="subtitle" name="subtitle" value="{{$branch->subtitle}}">
                      </div>
+
                    </div>
                  </div>
+               </div>
+
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -64,10 +65,10 @@
                     <div class="form-group">
                       <div class="col-xs-12">
                         <label for="name">Países</label>
-                        <select class="form-control" id="countries"  name="countries[]" multiple="multiple">
+                        <select class="form-control" id="countries"  name="countries" >
                            <option></option>
                            @foreach($countries as $country)
-                             <option value="{{$country->id}}" {{ in_array($country->id, $selectedCountries) ? 'selected' : ''}}>{{$country->name}}</option>
+                             <option value="{{$country->id}}" <?php if($country->id == $branch->country_id) echo "selected=selected";?> > {{$country->name}}</option>
                            @endforeach
 
                         </select>
@@ -76,7 +77,23 @@
                     </div>
                   </div>
                 </div>
+                  <div class="row">
+                   <div class="col-sm-12">
+                       <div class="form-group">
+                         <div class="col-xs-12">
+                           <label for="name">Provincia</label>
+                             <select class="form-control" id="states"  name="states" >
+                                <option></option>
+                                @foreach($states as $state)
+                                  <option value="{{$state->id}}" <?php if($state->id == $branch->state_id) echo "selected=selected";?> >{{$state->name}}</option>
+                                @endforeach
 
+                             </select>
+                         </div>
+
+                       </div>
+                     </div>
+                   </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -133,10 +150,14 @@ var urlAPI = "{{ url('api/branchs/edit/'.$branch->id) }}";
 var urlController = "{{ url('admin/branch') }}";
 $(document).ready(function(){
 
-    $("#countries").select2({
-      placeholder:"Países",
-      allowClear: true
-    });
+  $("#countries").select2({
+    placeholder:"País",
+    allowClear: false
+  });
+  $("#states").select2({
+    placeholder:"Provincia",
+    allowClear: false
+  });
   $("#name").keyup(function(){
     var Text = $(this).val();
     Text = Text.toLowerCase();

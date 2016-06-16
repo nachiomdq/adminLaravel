@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateBranchOfficesTable extends Migration
+class States extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,15 @@ class UpdateBranchOfficesTable extends Migration
      */
     public function up()
     {
-        Schema::table('branch_offices', function (Blueprint $table) {
-            $table->string('subtitle',255)->nullable();
+        Schema::create('states', function (Blueprint $table) {
+          $table->increments('id');
+          $table->string('name',255);
 
-        });
+
+          $table->timestamps();
+          $table->softDeletes();
+
+      });
     }
 
     /**
@@ -25,6 +30,6 @@ class UpdateBranchOfficesTable extends Migration
      */
     public function down()
     {
-        //
+      Schema::drop('states');
     }
 }

@@ -99,10 +99,10 @@ class BranchsController extends Controller
           $element->latitude = $data['latitude'];
           $element->subtitle = $data['subtitle'];
           $element->longitude = $data['longitude'];
+          $element->state_id = $data['states'];
+          $element->country_id = $data['countries'];
           $element->save();
-          #Add relationships
 
-          $element->countries()->sync($data['countries']);
 
           $r = new ApiResponse();
           $r->success = true;
@@ -130,10 +130,11 @@ class BranchsController extends Controller
           $element->latitude = $data['latitude'];
           $element->subtitle = $data['subtitle'];
           $element->longitude = $data['longitude'];
+        
+          $element->state_id = $data['states'];
+          $element->country_id = $data['countries'];
           $element->save();
-          #Add relationships
 
-          $element->countries()->sync($data['countries']);
 
 
           $r = new ApiResponse();
