@@ -26,7 +26,7 @@
 	float: right;
 	z-index: 1000;
 	top: 20px;
-	width: 80%; 
+	width: 80%;
 }
 
 .header .menu ul {
@@ -46,7 +46,7 @@
 }
 
 .header .menu ul li a:link {
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -57,7 +57,7 @@
 }
 
 .header .menu ul li a:hover {
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -71,7 +71,7 @@
 }
 
 .header .menu ul li a:visited {
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -82,7 +82,7 @@
 }
 
 .header .menu ul li a:visited:hover {
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -96,7 +96,7 @@
 }
 
 .header .menu ul li a.active {
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -136,13 +136,13 @@
 
 .header .slider .item .titulo h3 {
 	margin: 0px;
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 700;
 	font-size: 42px;
 	color: #1e1e1e;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	
+
 }
 
 .header .slider .item .copete {
@@ -154,11 +154,11 @@
 
 .header .slider .item .copete p {
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-weight: 400;
 	font-size: 14px;
 	color: #1e1e1e;
-	
+
 }
 
 .header .slider .item .boton {
@@ -166,14 +166,14 @@
 	top: 544px;
 	left: 50%;
 	width: 140px;
-	z-index: 1200;	
+	z-index: 1200;
 }
 
 .header .slider .item .boton a:link {
 	float: left;
 	margin: 0px;
 	width: 100%;
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #f7cc00;
@@ -196,7 +196,7 @@
 	float: left;
 	width: 30px;
 	height: 52px;
-	
+
 	background-image: url(../images/slider-arrow-left-iddle.png);
 	background-repeat: no-repeat;
 	background-position: left center;
@@ -210,7 +210,7 @@
 	background-image: url(../images/slider-arrow-right-iddle.png);
 	background-repeat: no-repeat;
 	background-position: right center;
-	cursor: pointer;	
+	cursor: pointer;
 }
 
 .destacado {
@@ -244,7 +244,7 @@
 .destacado .col .titulo h2 {
 	float: left;
 	margin: 0px;
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -273,11 +273,11 @@
 .destacado .col .lista ul li {
 	float: left;
 	margin: 0px;
-	width: 48%; 
+	width: 48%;
 }
 
 .destacado .col .lista ul li:first-child {
-	margin-right: 4%; 
+	margin-right: 4%;
 }
 
 .destacado .col .lista ul li .imagen {
@@ -287,13 +287,13 @@
 	border-bottom-color: #ebe8e5;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	
+
 }
 
 .destacado .col .lista ul li h3 {
 	float: left;
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-weight: 400;
 	font-size: 15px;
 	color: #e5b200;
@@ -305,7 +305,7 @@
 .destacado .col .lista ul li p {
 	float: left;
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #aaa7a5;
@@ -317,7 +317,7 @@
 .destacado .col .lista ul li a:link {
 	float: left;
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 10px;
 	color: #3d3c3b;
 	width: 100%;
@@ -325,13 +325,13 @@
 	text-align: center;
 	margin-top: 15px;
 	font-weight: 600;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .destacado .col .lista ul li a:hover {
 	float: left;
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 10px;
 	color: #3d3c3b;
 	width: 100%;
@@ -339,13 +339,13 @@
 	text-align: center;
 	margin-top: 15px;
 	font-weight: 600;
-	text-decoration: underline;	
+	text-decoration: underline;
 }
 
 .destacado .col .lista ul li a:visited {
 	float: left;
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 10px;
 	color: #3d3c3b;
 	width: 100%;
@@ -353,13 +353,13 @@
 	text-align: center;
 	margin-top: 15px;
 	font-weight: 600;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 .destacado .col .lista ul li a:visited:hover {
 	float: left;
 	margin: 0px;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 10px;
 	color: #3d3c3b;
 	width: 100%;
@@ -367,7 +367,7 @@
 	text-align: center;
 	margin-top: 15px;
 	font-weight: 600;
-	text-decoration: underline;	
+	text-decoration: underline;
 }
 
 
@@ -394,7 +394,7 @@
 .categorias .titulo h2 {
 	float: left;
 	margin: 0px;
-	font-family: "Montserrat" sans-serif;
+	font-family: "Montserrat" ;
 	font-weight: 400;
 	font-size: 11px;
 	color: #424140;
@@ -446,7 +446,7 @@
 	float: left;
 	width: 100%;
 	text-align: center;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #3d3c3b;
 	text-decoration: none;
@@ -458,7 +458,7 @@
 	float: left;
 	width: 100%;
 	text-align: center;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #fff;
 	text-decoration: none;
@@ -471,7 +471,7 @@
 	float: left;
 	width: 100%;
 	text-align: center;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #3d3c3b;
 	text-decoration: none;
@@ -483,7 +483,7 @@
 	float: left;
 	width: 100%;
 	text-align: center;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #fff;
 	text-decoration: none;
@@ -502,7 +502,7 @@
 
 .categorias .acceso a:link {
 	float: left;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #3d3c3b;
 	text-decoration: none;
@@ -510,7 +510,7 @@
 
 .categorias .acceso a:hover {
 	float: left;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #3d3c3b;
 	text-decoration: underline;
@@ -518,7 +518,7 @@
 
 .categorias .acceso a:visited {
 	float: left;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #3d3c3b;
 	text-decoration: none;
@@ -526,10 +526,8 @@
 
 .categorias .acceso a:visited:hover {
 	float: left;
-	font-family: "Open Sans" sans-serif;
+	font-family: "Open Sans" ;
 	font-size: 13px;
 	color: #3d3c3b;
 	text-decoration: underline;
 }
-
-

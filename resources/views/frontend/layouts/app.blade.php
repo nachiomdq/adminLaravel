@@ -16,8 +16,12 @@
 </head>
 
 <body>
-  @include('frontend.layouts.parts.menu-top')
 
+  @if(Request::is('productos') )
+    @include('frontend.layouts.parts.menu-top-products')
+  @else
+    @include('frontend.layouts.parts.menu-top')
+  @endif
 
   @yield('content-site')
 
@@ -28,6 +32,10 @@
   <script src="{{asset('theme/src/assets/js/core/jquery.min.js')}}"></script>
   <script src="{{asset('client-front/scripts/jquery.cycle.all.js')}}"></script>
   <script src="{{asset('client-front/scripts/jquery.easing.js')}}"></script>
+  <script>
+    urlLoadingGif = "{{url('client-front/scripts/jquery-loading-overlay-1.3/src/loading.gif')}}";
+  </script>
+  <script src="{{asset('client-front/scripts/jquery-loading-overlay-1.3/src/loadingoverlay.js')}}"></script>
 
   <script type="text/javascript">
 

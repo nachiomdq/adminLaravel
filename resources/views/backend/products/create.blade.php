@@ -36,18 +36,96 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
+                       <div class="col-xs-12">
+                         <label for="name">Subtítulo</label>
+                         <input class="form-control input-lg" type="text" id="subtitle" name="subtitle" value="">
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
                       <div class="col-xs-12">
                         <label for="name">Descripción</label>
                           <!-- Summernote Container -->
-                        <textarea class="form-control" name="descripcion"></textarea>
+
+                        <textarea class="wysihtml5 form-control" name="descripcion" rows="6"></textarea>
+
                       </div>
 
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
+                       <div class="col-xs-12">
+                         <label for="name">Características</label>
+                           <!-- Summernote Container -->
+                         <textarea class="form-control wysihtml5" name="characteristics"></textarea>
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
+                 <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <label for="name">Medidas (el primer elemento se considera titulo de la tabla)</label>
+                            <!-- Summernote Container -->
+                          <table class="table table-bordered table-hover" id="tab_logic">
+                    				<thead>
+                    					<tr >
+                    						<th class="text-center">
+                    							#
+                    						</th>
+                    						<th class="text-center">
+                    							OPCION 1
+                    						</th>
+                    						<th class="text-center">
+                    							OPCION 2
+                    						</th>
+                    						<th class="text-center">
+                    							OPCION 3
+                    						</th>
+                                <th class="text-center">
+                    							Borrar
+                    						</th>
+                    					</tr>
+                    				</thead>
+                    				<tbody>
+
+                               <tr id='addr0'>
+                                 <td>
+                                   <input class='form-control' style='width:40px' name="index" type="text" readonly value="1">
+                                 </td>
+                                 <td>
+                                 <input type="text" name='opcion-1'  placeholder='Opcion 1' class="form-control"/>
+                                 </td>
+                                 <td>
+                                 <input type="text" name='opcion-2' placeholder='Opcion 2' class="form-control"/>
+                                 </td>
+                                 <td>
+                                 <input type="text" name='opcion-3' placeholder='Opcion 3' class="form-control"/>
+                                 </td>
+                               </tr>
+                                        <tr id='addr1'></tr>
+                    				</tbody>
+                    			</table>
+                          <a id="add_row" class="btn btn-default pull-left">Agregar nuevo</a>
+                          <a id='delete_row' class="pull-right btn btn-default">Borrar ultimo</a>
+                          <a id='' onclick="buildTableSizesToJson()" class="pull-right btn btn-default">Test Json</a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -161,6 +239,7 @@
                     </div>
                   </div>
                 </div>
+                <input type="hidden"  id="tableHidden" name="tableHidden" value="">
             </form>
         </div>
         </div>
@@ -170,14 +249,12 @@
   </main>
 @endsection
 @section('custom-css')
-<link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/summernote/summernote.min.css')}}">
-<link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/summernote/summernote-bs3.min.css')}}">
-<link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/dropzonejs/dropzone.min.css')}}">
 
 
 @endsection
 @section('custom-scripts')
-<script src="{{asset('theme/src/assets/js/plugins/summernote/summernote.min.js')}}"></script>
+
+
 <script src="{{asset('theme/src/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
 
 
@@ -189,6 +266,11 @@
 var urlAPI = "{{ url('api/products/create') }}";
 var urlController = "{{ url('admin/products') }}";
 var urlMedia = "{{ url('api/media/uploadFiles') }}";
+function buildTableSizesToJson(){
+
+      console.log($("#tab_logic").find('input').serializeArray());
+
+  }
 $(document).ready(function(){
 
   jQuery('.js-tags-input').tagsInput({
@@ -199,7 +281,7 @@ $(document).ready(function(){
       delimiter: [',']
   });
 
-  var myDropzone = new Dropzone(".dropzone", { url: urlMedia ,autoProcessQueue:false,acceptedFiles: "image/jpeg,image/png,image/gif"});
+  var myDropzone = new Dropzone(".dropzone", { uploadMultiple: true,parallelUploads:100,url: urlMedia ,autoProcessQueue:false,acceptedFiles: "image/jpeg,image/png,image/gif"});
 
   $("#name").keyup(function(){
     var Text = $(this).val();
@@ -219,10 +301,37 @@ $(document).ready(function(){
     placeholder:"Países",
     allowClear: true
   });
+  $("textarea").wysihtml5({toolbar: {
+    "font-styles": true, // Font styling, e.g. h1, h2, etc.
+    "emphasis": true, // Italics, bold, etc.
+    "lists": true, // (Un)ordered lists, e.g. Bullets, Numbers.
+    "html": true, // Button which allows you to edit the generated HTML.
+    "link": false, // Button to insert a link.
+    "image": false, // Button to insert an image.
+    "color": false, // Button to change color of font
+    "blockquote": false, // Blockquote
+    "size":"sm" // options are xs, sm, lg
+  }});
+
+  var i=1;
+  $("#add_row").click(function(){
+    $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='opciona"+i+"' type='text' placeholder='Opcion "+i+"' class='form-control input-md'  /> </td><td><input  name='opcionb"+i+"' type='text' placeholder='Opcion "+i+"'  class='form-control input-md'></td><td><input  name='opcionc"+i+"' type='text' placeholder='Opcion "+i+"'  class='form-control input-md'></td>");
+
+    $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+    i++;
+  });
+  $("#delete_row").click(function(){
+  	 if(i>1){
+    	 $("#addr"+(i-1)).html('');
+    	 i--;
+    	 }
+  });
 
   $("#form").on('submit', function(e) {
       e.preventDefault();
       //showSpinner();
+      //Table of sizes
+      $('#tableHidden').val(JSON.stringify($("#tab_logic").find('input').serializeArray()));
 
       $.ajax({
           method: "POST",
@@ -245,15 +354,18 @@ $(document).ready(function(){
                   closeOnConfirm: true },
                 function(){
                   //swal("Deleted!", "Your imaginary file has been deleted.", "success");
-                  document.location.href =urlController +"/list";
+
+
+                  var productID = response.data.id;
 
                   myDropzone.on("sending", function(file, xhr, formData) {
-                    formData.append("id", response.data.id);
+                    formData.append("productId", productID);
                     formData.append("_token", $('input[name="_token"]').val());
                     formData.append("location", "products");
 
                   });
                   myDropzone.processQueue();
+                    document.location.href =urlController +"/list";
                 });
 
 

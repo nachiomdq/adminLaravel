@@ -20,6 +20,8 @@
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/css/themes/flat.min.css')}}">
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/sweetalert/dist/sweetalert.css')}}">
     <link rel="stylesheet" id="css-main" href="{{asset('theme/src/assets/js/plugins/bootstrap-jasny/dist/css/jasny-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css')}}">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
     @yield('custom-css')
 
 
@@ -47,6 +49,9 @@
     <script src="{{asset('theme/src/assets/js/plugins/select2/select2.full.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/core/js.cookie.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/plugins/dropzonejs/dropzone.min.js')}}"></script>
+    <script src="{{asset('theme/src/assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js')}}"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.js"></script>
     <script src="{{asset('theme/src/assets/js/plugins/bootstrap-jasny/dist/js/jasny-bootstrap.min.js')}}"></script>
     <script src="{{asset('theme/src/assets/js/app.js')}}"></script>
     <script src="{{ asset('theme/src/assets/js/plugins/datatables/media/js/jquery.dataTables.min.js') }}"></script>

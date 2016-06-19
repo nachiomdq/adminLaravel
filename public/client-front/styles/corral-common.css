@@ -524,3 +524,27 @@ body {
 	font-size: 10px;
 	color: #fff;
 }
+.container-404 {
+    text-align: center;
+    /* display: table-cell; */
+    /* padding: 30px; */
+    vertical-align: middle;
+}
+
+.content-404 {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 120px;
+}
+
+.title-404 {
+    font-size: 31PX;
+    MARGIN: 0 AUTO;
+    color: #ef4e37;
+    /* margin-bottom: 40px; */
+}
+.no-height{
+  margin-top: 30px;
+  height: 0px !important;
+}

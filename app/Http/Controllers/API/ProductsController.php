@@ -64,8 +64,18 @@ class ProductsController extends Controller
           $element = Products::find($productID);
           $element->name = $data['name'];
           $element->description = $data['descripcion'];
+          $element->subtitle = $data['subtitle'];
+          $element->characteristics = $data['characteristics'];
           $element->tags = $data['tags'];
+          $element->table_of_sizes  = $data['table_of_sizes'];
+        /*  $arrayElement = array();
+          $i = 0;
+          foreach (json_decode($data['tableHidden'],true) as $table) {
 
+            $arrayElement[$i++] = $table;
+          }
+
+          $element->table_of_sizes = json_encode($arrayElement,true);*/
           if($request->file('coverimage')){
             $name = time()."_".$request->file('coverimage')->getClientOriginalName();
             $element->cover_image =$name;
@@ -105,8 +115,17 @@ class ProductsController extends Controller
           $element = new Products();
           $element->name = $data['name'];
           $element->description = $data['descripcion'];
+          $element->subtitle = $data['subtitle'];
+          $element->characteristics = $data['characteristics'];
           $element->tags = $data['tags'];
+          $arrayElement = array();
+          $i = 0;
+          foreach (json_decode($data['tableHidden'],true) as $table) {
 
+            $arrayElement[$i++] = $table;
+          }
+
+          $element->table_of_sizes = json_encode($arrayElement,true);
           if($request->file('coverimage')){
             $name = time()."_".$request->file('coverimage')->getClientOriginalName();
             $element->cover_image =$name;

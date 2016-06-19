@@ -20,18 +20,18 @@
                 font-family: 'Lato';
             }
 
-            .container {
+            .container-404 {
                 text-align: center;
                 display: table-cell;
                 vertical-align: middle;
             }
 
-            .content {
+            .content-404 {
                 text-align: center;
                 display: inline-block;
             }
 
-            .title {
+            .title-404 {
                 font-size: 72px;
                 margin-bottom: 40px;
             }

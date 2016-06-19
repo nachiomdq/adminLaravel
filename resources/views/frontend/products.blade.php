@@ -8,82 +8,27 @@
 
     <div class="filtros">
 
-  		<div class="wp">
-  			<ul>
-          @foreach($states as $state)
-            	<li>
-      					<a data-id="{{$state->id}}" href="#" >{{$state->name}}</a>
-      				</li>
+  		<div id="menu-categories" class="wp">
+  			<ul >
+          <?php $i = 0;?>
+          @foreach($categories as $category)
+
+            <li>
+    					<a data-id="{{$category->id}}" href="#" class="selectCategory <?php if ($i == 0) echo "active";?>"  >{{$category->name}}</a>
+    				</li>
+            <?php $i++;?>
           @endforeach
-
-  			</ul>
+		    </ul>
   		</div>
+    </div>
+    <div class="cuerpo">
 
+      {{-- AJAX RESPONSE FROM PRODUCTS FILTER CATEGORY --}}
+      <div id="ajax-response">
 
-  	</div>
-
-
-
-  	<div class="cuerpo">
-  		<div class="wp">
-  			<div class="coli">
-  				<div class="titulo">
-  					<h2>Mapa</h2>
-  				</div>
-  				<div class="lista">
-  					<div class="mapa">
-  						<div id="map-canvas">
-  						</div>
-  					</div>
-  				</div>
-  			</div>
-
-  			<div class="cold">
-  				<div class="titulo">
-  					<h2>Listado de Sucursales</h2>
-  				</div>
-  				<div class="lista">
-  					<ul>
-  						<li>
-  							<h3>Sucursal Acassuso</h3>
-  							<h4>Casa Central</h4>
-  							<p>
-  								Av. Santa Fé 544<br>
-  								Acassuso - Buenos Aires<br>
-  								Tel: (011) - 4755 - 2233<br>
-  								<a href="#">acassuso@neumaticoscorral.com.ar</a>
-  							</p>
-
-
-  						</li>
-  						<li>
-  							<h3>Sucursal Pilar</h3>
-  							<h4>Alineación / Balanceo / Tren Delantero</h4>
-  							<p>
-  								Las Magnolias 669, Barrio La Esmeralda<br>
-  								Pilar - Buenos Aires<br>
-  								Tel: (02322) - 471852<br>
-  								<a href="#">pilar@neumaticoscorral.com.ar</a>
-  							</p>
-
-  						</li>
-  						<li>
-  							<h3>Novateck Buenos Aires</h3>
-  							<h4>Planta de Precurado</h4>
-  							<p>
-  								Cruce de Rutas 24 y 25<br>
-  								Parque Industrial Provado del Oeste<br>
-  								Moreno<br>
-  								<a href="#">novateck@neumaticoscorral.com.ar</a>
-  							</p>
-
-  						</li>
-  					</ul>
-  				</div>
-  			</div>
-  		</div>
-  	</div>
-
+      </div>
+    </div>
+    <input type="hidden" id="categoryID" value="">
 
 
   	<div class="tip">
@@ -106,7 +51,12 @@
 @section('custom-scripts')
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   <script src="{{asset('client-front/map/caba.js')}}"></script>
+  <script>
+    var urlList = "{{url('api/frontend/list-products-by-category')}}"
+
+  </script>
+  <script src="{{asset('client-front/scripts/productsAjax.js')}}"></script>
 @endsection
 @section('custom-css')
-  <link href="{{asset('client-front/styles/corral-sucursales.css')}}" rel="stylesheet" type="text/css">
+  <link href="{{asset('client-front/styles/corral-productos.css')}}" rel="stylesheet" type="text/css">
 @endsection

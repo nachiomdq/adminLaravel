@@ -28,7 +28,8 @@ class ProductsController extends BaseBackendController
       $this->data['selectedCategories'] =  $this->data['product']->categories()->lists('category_id')->toArray();
       $this->data['selectedSubCategories'] =  $this->data['product']->subcategories()->lists('subcategory_id')->toArray();
       $this->data['selectedCountries'] =  $this->data['product']->countries()->lists('country_id')->toArray();
-
+      //$this->data['product']['tablesizes'] = json_decode($this->data['product']['table_of_sizes']);
+      //$this->data['product']['countTables'] = count($this->data['product']['tablesizes']);
       return view('backend.products.edit', $this->data);
       /*$this->data['postData']['favorite']=Favorites::findUserFavorite('posts_data',$postId);
       $media = new Media();

@@ -17,9 +17,20 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/', 'FrontEnd\HomeController@getIndex');// BASE PATH ADMIN
-Route::get('/sucursales', 'FrontEnd\BranchController@getIndex');// BASE PATH ADMIN
-Route::get('/productos', 'FrontEnd\ProductsController@getIndex');// BASE PATH ADMIN
+Route::get('/sucursales', 'FrontEnd\BranchController@getIndex');
+Route::get('/productos', 'FrontEnd\ProductsController@getIndex');
+Route::get('/producto/{FRIENDLYURL}', 'FrontEnd\ProductsController@getDetail');
+/**
+ * API PUBLICAS
+ */
+Route::group(['prefix' => 'api','middleware' => 'web'], function() {
 
+    Route::group(['middleware' => 'web'], function(){
+          Route::controller('frontend', 'API\ClientController');
+
+    });
+
+});
 /**
  * API PRIVADAS
  */
