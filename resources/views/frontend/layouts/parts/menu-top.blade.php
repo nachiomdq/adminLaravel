@@ -33,10 +33,10 @@
     <div class="submenu">
       <ul>
         <li>
-          <a href="contacto.php">CONTACTO</a>
+          <a href="{{url('contacto')}}">CONTACTO</a>
         </li>
         <li>
-          <a href="sucursales.php">SUCURSALES</a>
+          <a href="{{url('sucursales')}}">SUCURSALES</a>
         </li>
       </ul>
     </div>

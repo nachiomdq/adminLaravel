@@ -8,33 +8,33 @@
 					<li><a href="index.php">HOME</a></li>
 				</ul>
 				<ul style="width: 20%;">
-					<li><a href="productos.php">PRODUCTOS</a></li>
-					<li><a href="productos.php">Auto</a></li>
-					<li><a href="productos.php">Camioneta</a></li>
-					<li><a href="productos.php">Camión</a></li>
-					<li><a href="productos.php">Agrícola</a></li>
-					<li><a href="productos.php">Industrial</a></li>
-					<li><a href="productos.php">OTR</a></li>
-					<li><a href="productos.php">Cámaras</a></li>
+					<li><a href="{{url('productos')}}">PRODUCTOS</a></li>
+					<li><a href="{{url('productos')}}">Auto</a></li>
+					<li><a href="{{url('productos')}}">Camioneta</a></li>
+					<li><a href="{{url('productos')}}">Camión</a></li>
+					<li><a href="{{url('productos')}}">Agrícola</a></li>
+					<li><a href="{{url('productos')}}">Industrial</a></li>
+					<li><a href="{{url('productos')}}">OTR</a></li>
+					<li><a href="{{url('productos')}}">Cámaras</a></li>
 				</ul>
 				<ul style="width: 20%;">
-					<li><a href="informacion-tecnica.php">INF. TÉCNICA</a></li>
-					<li><a href="informacion-tecnica.php">El Neumático</a></li>
-					<li><a href="informacion-tecnica.php">Dimensiones</a></li>
-					<li><a href="informacion-tecnica.php">Segmentación del Mercado</a></li>
-					<li><a href="informacion-tecnica.php">Tablas</a></li>
+					<li><a href="{{url('informacion-tecnica')}}">INF. TÉCNICA</a></li>
+					<li><a href="{{url('informacion-tecnica')}}">El Neumático</a></li>
+					<li><a href="{{url('informacion-tecnica')}}">Dimensiones</a></li>
+					<li><a href="{{url('informacion-tecnica')}}">Segmentación del Mercado</a></li>
+					<li><a href="{{url('informacion-tecnica')}}">Tablas</a></li>
 				</ul>
 				<ul style="width: 10%;">
-					<li><a href="empresa.php">EMPRESA</a></li>
+					<li><a href="{{url('empresa')}}">EMPRESA</a></li>
 				</ul>
 				<ul style="width: 10%;">
-					<li><a href="precurados.php">PRECURADOS</a></li>
+					<li><a href="{{url('precurados')}}">PRECURADOS</a></li>
 				</ul>
 				<ul style="width: 10%;">
-					<li><a href="sucursales.php">SUCURSALES</a></li>
+					<li><a href="{{url('sucursales')}}">SUCURSALES</a></li>
 				</ul>
 				<ul style="width: 10%;">
-					<li><a href="contacto.php">CONTACTO</a></li>
+					<li><a href="{{url('contacto')}}">CONTACTO</a></li>
 				</ul>
 			</div>
 		</div>

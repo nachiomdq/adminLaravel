@@ -40,7 +40,7 @@ class ClientController extends Controller
 
 
         #Instead of return response, return view to apply in front end
-        return view('frontEnd.ajaxResponses.productList', $this->data);
+        return view('frontend.ajaxResponses.productList', $this->data);
 
         $r = new ApiResponse();
         $r->success = true;
