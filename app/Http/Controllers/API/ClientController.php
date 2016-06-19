@@ -13,14 +13,53 @@ use League\Flysystem\Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Products;
+use App\Models\Branchs;
 use App\Models\Subcategories;
+use App\Models\Categories;
+use App\Models\Products;
 
 
 class ClientController extends Controller
 {
     //
+    public function getListBranchsByState(){
+      try {
+        $countryID = 1; // cuando sea multiCountry detectar la variable de sesion
+        $data = Input::all();
+        $this->data['branchs'] = Branchs::getBranchs($countryID,"actives",null,null,"",$data['stateID']);
 
+        #Obtengo la primer latitud y longitud del primer state, por defecto queda en CABA SI NO HAY
+        $this->data['latitude'] = "-34.642649";
+        $this->data['longitude'] = "-58.546226";
+        if(!$this->data['branchs']->isEmpty()){
+          $this->data['latitude'] = $this->data['branchs'][0]->latitude;
+          $this->data['longitude'] = $this->data['branchs'][0]->longitude;
+        }
+        if($data['returnView'] == "true"){
+          #Instead of return response, return view to apply in front end
+          return view('frontend.ajaxResponses.branchsList', $this->data);
+        } else{
+
+            $r = new ApiResponse();
+            $r->success = true;
+            $r->message = 'List of branchs by Category';
+            $r->data = $this->data;
+            return $r->doResponse();
+        }
+
+
+
+
+
+
+
+      } catch (Exception $e) {
+          $r = new ApiResponse();
+          $r->success = false;
+          $r->message = $e->getMessage();
+          return $r->doResponse();
+      }
+    }
     public function getListProductsByCategory(){
       try {
         $countryID = 1; // cuando sea multiCountry detectar la variable de sesion

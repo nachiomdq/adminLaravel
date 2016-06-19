@@ -10,10 +10,12 @@
 
   		<div class="wp">
   			<ul>
+          <?php $i = 0;?>
           @foreach($states as $state)
             	<li>
-      					<a data-id="{{$state->id}}" href="#" >{{$state->name}}</a>
+      					<a data-id="{{$state->id}}" href="#" class="selectState <?php if ($i == 0) echo "active";?>">{{$state->name}}</a>
       				</li>
+                <?php $i++;?>
           @endforeach
 
   			</ul>
@@ -25,63 +27,11 @@
 
 
   	<div class="cuerpo">
-  		<div class="wp">
-  			<div class="coli">
-  				<div class="titulo">
-  					<h2>Mapa</h2>
-  				</div>
-  				<div class="lista">
-  					<div class="mapa">
-  						<div id="map-canvas">
-  						</div>
-  					</div>
-  				</div>
-  			</div>
+      {{-- AJAX RESPONSE FROM PRODUCTS FILTER CATEGORY --}}
+      <div id="ajax-response">
 
-  			<div class="cold">
-  				<div class="titulo">
-  					<h2>Listado de Sucursales</h2>
-  				</div>
-  				<div class="lista">
-  					<ul>
-  						<li>
-  							<h3>Sucursal Acassuso</h3>
-  							<h4>Casa Central</h4>
-  							<p>
-  								Av. Santa Fé 544<br>
-  								Acassuso - Buenos Aires<br>
-  								Tel: (011) - 4755 - 2233<br>
-  								<a href="#">acassuso@neumaticoscorral.com.ar</a>
-  							</p>
+      </div>
 
-
-  						</li>
-  						<li>
-  							<h3>Sucursal Pilar</h3>
-  							<h4>Alineación / Balanceo / Tren Delantero</h4>
-  							<p>
-  								Las Magnolias 669, Barrio La Esmeralda<br>
-  								Pilar - Buenos Aires<br>
-  								Tel: (02322) - 471852<br>
-  								<a href="#">pilar@neumaticoscorral.com.ar</a>
-  							</p>
-
-  						</li>
-  						<li>
-  							<h3>Novateck Buenos Aires</h3>
-  							<h4>Planta de Precurado</h4>
-  							<p>
-  								Cruce de Rutas 24 y 25<br>
-  								Parque Industrial Provado del Oeste<br>
-  								Moreno<br>
-  								<a href="#">novateck@neumaticoscorral.com.ar</a>
-  							</p>
-
-  						</li>
-  					</ul>
-  				</div>
-  			</div>
-  		</div>
   	</div>
 
 
@@ -104,8 +54,15 @@
 
 @endsection
 @section('custom-scripts')
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <script src="{{asset('client-front/map/caba.js')}}"></script>
+  <script>
+    var urlList = "{{url('api/frontend/list-branchs-by-state')}}"
+    var icono = '{{asset('client-front/images/icon-mapa.png')}}';
+    var latitude = "";
+    var longitude = "";
+  </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="{{asset('client-front/map/branchs.js')}}"></script>
+    <script src="{{asset('client-front/scripts/branchsAjax.js')}}"></script>
 @endsection
 @section('custom-css')
   <link href="{{asset('client-front/styles/corral-sucursales.css')}}" rel="stylesheet" type="text/css">

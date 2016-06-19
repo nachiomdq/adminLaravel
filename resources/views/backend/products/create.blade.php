@@ -54,7 +54,7 @@
                         <label for="name">Descripción</label>
                           <!-- Summernote Container -->
 
-                        <textarea class="wysihtml5 form-control" name="descripcion" rows="6"></textarea>
+                        <textarea class="summernote form-control" name="descripcion" rows="6"></textarea>
 
                       </div>
 
@@ -67,7 +67,7 @@
                        <div class="col-xs-12">
                          <label for="name">Características</label>
                            <!-- Summernote Container -->
-                         <textarea class="form-control wysihtml5" name="characteristics"></textarea>
+                         <textarea class="form-control summernote" name="characteristics"></textarea>
                        </div>
 
                      </div>
@@ -77,50 +77,12 @@
                   <div class="col-sm-12">
                       <div class="form-group">
                         <div class="col-xs-12">
+
                           <label for="name">Medidas (el primer elemento se considera titulo de la tabla)</label>
                             <!-- Summernote Container -->
-                          <table class="table table-bordered table-hover" id="tab_logic">
-                    				<thead>
-                    					<tr >
-                    						<th class="text-center">
-                    							#
-                    						</th>
-                    						<th class="text-center">
-                    							OPCION 1
-                    						</th>
-                    						<th class="text-center">
-                    							OPCION 2
-                    						</th>
-                    						<th class="text-center">
-                    							OPCION 3
-                    						</th>
-                                <th class="text-center">
-                    							Borrar
-                    						</th>
-                    					</tr>
-                    				</thead>
-                    				<tbody>
+                            <textarea class="form-control summernote" name="table_of_sizes"></textarea>
 
-                               <tr id='addr0'>
-                                 <td>
-                                   <input class='form-control' style='width:40px' name="index" type="text" readonly value="1">
-                                 </td>
-                                 <td>
-                                 <input type="text" name='opcion-1'  placeholder='Opcion 1' class="form-control"/>
-                                 </td>
-                                 <td>
-                                 <input type="text" name='opcion-2' placeholder='Opcion 2' class="form-control"/>
-                                 </td>
-                                 <td>
-                                 <input type="text" name='opcion-3' placeholder='Opcion 3' class="form-control"/>
-                                 </td>
-                               </tr>
-                                        <tr id='addr1'></tr>
-                    				</tbody>
-                    			</table>
-                          <a id="add_row" class="btn btn-default pull-left">Agregar nuevo</a>
-                          <a id='delete_row' class="pull-right btn btn-default">Borrar ultimo</a>
-                          <a id='' onclick="buildTableSizesToJson()" class="pull-right btn btn-default">Test Json</a>
+
                         </div>
 
                       </div>
@@ -280,7 +242,20 @@ $(document).ready(function(){
       removeWithBackspace: true,
       delimiter: [',']
   });
+  $('.summernote').summernote({
+    callbacks: {
+        onPaste: function (e) {
+            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
 
+            e.preventDefault();
+
+            // Firefox fix
+            setTimeout(function () {
+                document.execCommand('insertText', false, bufferText);
+            }, 10);
+        }
+    }
+  });
   var myDropzone = new Dropzone(".dropzone", { uploadMultiple: true,parallelUploads:100,url: urlMedia ,autoProcessQueue:false,acceptedFiles: "image/jpeg,image/png,image/gif"});
 
   $("#name").keyup(function(){
@@ -301,17 +276,7 @@ $(document).ready(function(){
     placeholder:"Países",
     allowClear: true
   });
-  $("textarea").wysihtml5({toolbar: {
-    "font-styles": true, // Font styling, e.g. h1, h2, etc.
-    "emphasis": true, // Italics, bold, etc.
-    "lists": true, // (Un)ordered lists, e.g. Bullets, Numbers.
-    "html": true, // Button which allows you to edit the generated HTML.
-    "link": false, // Button to insert a link.
-    "image": false, // Button to insert an image.
-    "color": false, // Button to change color of font
-    "blockquote": false, // Blockquote
-    "size":"sm" // options are xs, sm, lg
-  }});
+
 
   var i=1;
   $("#add_row").click(function(){
@@ -331,7 +296,7 @@ $(document).ready(function(){
       e.preventDefault();
       //showSpinner();
       //Table of sizes
-      $('#tableHidden').val(JSON.stringify($("#tab_logic").find('input').serializeArray()));
+
 
       $.ajax({
           method: "POST",

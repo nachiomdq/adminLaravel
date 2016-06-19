@@ -49,8 +49,7 @@
 
 @endsection
 @section('custom-scripts')
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <script src="{{asset('client-front/map/caba.js')}}"></script>
+
   <script>
     var urlList = "{{url('api/frontend/list-products-by-category')}}"
 

@@ -55,7 +55,7 @@
                       <div class="col-xs-12">
                         <label for="name">Descripción</label>
 
-                        <textarea class="form-control" name="descripcion"></textarea>
+                        <textarea class="form-control summernote" name="descripcion"></textarea>
                       </div>
 
                     </div>
@@ -108,7 +108,10 @@
                           <input  class="form-control input-lg" type="text" name="longitude" id="longitude" value="">
 
                       </div>
+
                     </div>
+                        <label>Para obtener los datos ingresar a <a href="http://www.gps-coordinates.net/" target="_blank">http://www.gps-coordinates.net/</a> </label>
+                        <br>
                   </div>
                 </div>
 
@@ -167,7 +170,21 @@ $(document).ready(function(){
     $("#friendly_url").val(Text);
   });
 
+    $('.summernote').summernote({
+      height:150,
+      callbacks: {
+          onPaste: function (e) {
+              var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
 
+              e.preventDefault();
+
+              // Firefox fix
+              setTimeout(function () {
+                  document.execCommand('insertText', false, bufferText);
+              }, 10);
+          }
+      }
+    });
   $("#form").on('submit', function(e) {
       e.preventDefault();
       //showSpinner();

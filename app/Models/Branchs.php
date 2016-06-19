@@ -16,7 +16,7 @@ class Branchs extends Model
   {
     return $this->belongsTo('App\Models\States','state_id');
   }
-  public static function getBranchs($countryID,$status,$take,$offset,$search=""){
+  public static function getBranchs($countryID,$status,$take,$offset,$search="",$stateId = null){
 
     $query = self::select('branch_offices.id as DT_RowId', 'branch_offices.*')
 
@@ -28,6 +28,11 @@ class Branchs extends Model
 
       $query->take($take);
       $query->offset($offset);
+    }
+    if(!is_null($stateId)){
+
+      $query->where('branch_offices.state_id','=',$stateId);;
+
     }
     if($search!=""){
 

@@ -19,77 +19,77 @@
 	    },
 	    {
 	      featureType: 'landscape',
-		  elementType: 'geometry',	      	      
+		  elementType: 'geometry',
 	      stylers: [
 	        { color: '#f2f1eb' }
 	      ]
 	    },
 	    {
 	      featureType: 'landscape',
-		  elementType: 'labels.text.fill',	      	      
+		  elementType: 'labels.text.fill',
 	      stylers: [
 	        { color: '#969a91' }
 	      ]
 	    },
 	    {
 	      featureType: 'landscape',
-		  elementType: 'labels.text.stroke',	      	      
+		  elementType: 'labels.text.stroke',
 	      stylers: [
 	        { color: '#f2f1ec' }
 	      ]
 	    },
 	    {
 	      featureType: 'administrative',
-		  elementType: 'labels.text.fill',	      	      
+		  elementType: 'labels.text.fill',
 	      stylers: [
 	        { color: '#969a91' }
 	      ]
 	    },
 	    {
 	      featureType: 'administrative',
-		  elementType: 'labels.text.stroke',	      	      
+		  elementType: 'labels.text.stroke',
 	      stylers: [
 	        { color: '#f2f1ec' }
 	      ]
 	    },
 	    {
 	      featureType: 'poi',
-		  elementType: 'geometry',	      	      
+		  elementType: 'geometry',
 	      stylers: [
 	        { color: '#e1e0da' }
 	      ]
 	    },
 	    {
 	      featureType: 'poi',
-		  elementType: 'labels.text.fill',	      	      
+		  elementType: 'labels.text.fill',
 	      stylers: [
 	        { color: '#969a91' }
 	      ]
 	    },
 	    {
 	      featureType: 'poi',
-		  elementType: 'labels.text.stroke',	      	      
+		  elementType: 'labels.text.stroke',
 	      stylers: [
 	        { color: '#f2f1ec' }
 	      ]
 	    },
 	    {
 	      featureType: 'road',
-		  elementType: 'geometry.fill',	      	      
+		  elementType: 'geometry.fill',
 	      stylers: [
 	        { color: '#e1e0da' }
 	      ]
 	    },
 	    {
 	      featureType: 'road',
-		  elementType: 'geometry.stroke',	      	      
+		  elementType: 'geometry.stroke',
 	      stylers: [
 	        { color: '#d4d3ca' }
 	      ]
 	    },
 	    {
 	      featureType: 'road',
-		  elementType: 'labels.icon',	      	      
+		  elementType: 'labels.icon',
 	      stylers: [
 	        { saturation: '-100' },
 	        { lightness: '50' },
@@ -98,35 +98,35 @@
 	    },
 	    {
 	      featureType: 'road',
-		  elementType: 'labels.text.fill',	      	      
+		  elementType: 'labels.text.fill',
 	      stylers: [
 	        { color: '#969a91' }
 	      ]
 	    },
 	    {
 	      featureType: 'road',
-		  elementType: 'labels.text.stroke',	      	      
+		  elementType: 'labels.text.stroke',
 	      stylers: [
 	        { color: '#f2f1ec' }
 	      ]
 	    },
 	    {
 	      featureType: 'road.highway',
-		  elementType: 'geometry.stroke',	      
+		  elementType: 'geometry.stroke',
 	      stylers: [
 	        { color: '#d0cfca' }
 	      ]
 	    },
 	    {
 	      featureType: 'road.highway',
-		  elementType: 'geometry.fill',	      
+		  elementType: 'geometry.fill',
 	      stylers: [
 	        { color: '#dcdbd6' }
 	      ]
 	    }
 
 	  ];
-	  
+
 	  var mapOptions = {
 	    zoom: 12,
 	    center: new google.maps.LatLng(-34.642649, -58.546226),
@@ -134,7 +134,7 @@
 		      mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
 		    },
 		    mapTypeId: MY_MAPTYPE_ID
-	    
+
 	  };
 
 
@@ -144,8 +144,8 @@
   var styledMapOptions = {
     name: 'Custom Style'
   };
-  
-  
+
+
 var icono = 'images/icon-mapa.png';
 
 //	Puntos de Venta CABA y GBA
@@ -250,7 +250,7 @@ var icono = 'images/icon-mapa.png';
 
 
 	  function closeall() {
-	  
+
 	    infowindow2.close();
 	    infowindow3.close();
 	    infowindow4.close();
@@ -267,5 +267,5 @@ var icono = 'images/icon-mapa.png';
 	}
 
 
-	
+
 	google.maps.event.addDomListener(window, 'load', initialize);

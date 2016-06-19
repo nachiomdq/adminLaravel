@@ -239,7 +239,6 @@ $(document).ready(function(){
       removeWithBackspace: true,
       delimiter: [',']
   });
-   $(document).ready(function() {
   $('.summernote').summernote({
     callbacks: {
         onPaste: function (e) {
@@ -253,8 +252,7 @@ $(document).ready(function(){
             }, 10);
         }
     }
-});
-});
+  });
   var myDropzone = new Dropzone(".dropzone", { uploadMultiple: true,parallelUploads:100,url: urlMedia ,autoProcessQueue:false,acceptedFiles: "image/jpeg,image/png,image/gif"});
 
   $("#name").keyup(function(){
