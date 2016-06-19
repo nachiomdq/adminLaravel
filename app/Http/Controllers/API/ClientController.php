@@ -37,7 +37,7 @@ class ClientController extends Controller
         }
         if($data['returnView'] == "true"){
           #Instead of return response, return view to apply in front end
-          return view('frontend.ajaxResponses.branchsList', $this->data);
+          return view('frontend.ajaxResponses.branchslist', $this->data);
         } else{
 
             $r = new ApiResponse();
