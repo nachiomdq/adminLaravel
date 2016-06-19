@@ -21,13 +21,13 @@ $(".selectState").on('click', function(e) {
 
 });
 function initMap(stateID){
-  initialize();
+
   $.ajax({
       method: "GET",
       url: urlList,
       data: {stateID:stateID,returnView:false}
   }).done(function(response) {
-
+    initialize();
       $.each( response.data.branchs, function( index, value ){
 
 
@@ -54,7 +54,7 @@ function initMap(stateID){
         });
 
       });
-      console.log(response.data)
+
   });
 
 
