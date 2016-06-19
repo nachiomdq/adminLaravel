@@ -1,6 +1,6 @@
 	var map;
-  var infowindow = new google.maps.InfoWindow();
-  
+
+
 	function initialize() {
 
 
@@ -157,3 +157,5 @@
 
 
 	google.maps.event.addDomListener(window, 'load', initialize);
+  var infowindow = new google.maps.InfoWindow();
+ 

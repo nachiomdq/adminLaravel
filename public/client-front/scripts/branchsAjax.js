@@ -21,43 +21,48 @@ $(".selectState").on('click', function(e) {
 
 });
 function initMap(stateID){
+  initialize();
 
   $.ajax({
       method: "GET",
       url: urlList,
       data: {stateID:stateID,returnView:false}
   }).done(function(response) {
-    initialize();
+
       $.each( response.data.branchs, function( index, value ){
 
 
-        var pdv = new google.maps.Marker({
-            position: new google.maps.LatLng(value.latitude, value.longitude),
-            map: map,
-            title: value.name,
-            icon: icono
-        });
-        infowindow = new google.maps.InfoWindow({
-            content: '<div class="map-info" id="content">'+
-            '<h1 id="firstHeading" class="firstHeading">'+value.name+'</h1>'+
-            '<div class="contenido" id="bodyContent">'+
-            value.description +
-            '</div>'+
-            '</div>'
-        });
 
-        google.maps.event.addListener(pdv, 'click', function() {
-          if (infowindow) {
-              infowindow.close();
-          }
-          infowindow.open(map,pdv);
-        });
+        var content= '<div class="map-info" id="content">'+
+                     '<h1 id="firstHeading" class="firstHeading">'+value.name+'</h1>'+
+                     '<div class="contenido" id="bodyContent">'+
+                     value.description +
+                     '</div>'+
+                     '</div>';
 
+        windowMap(content,value);
       });
 
   });
 
 
+
+}
+function windowMap(content,value){
+  var pdv = new google.maps.Marker({
+      position: new google.maps.LatLng(value.latitude,value.longitude),
+      map: map,
+      title: value.title,
+      icon: icono
+  });
+
+    google.maps.event.addListener(pdv,'click', (function(){
+        infowindow.close();
+        infowindow = new google.maps.InfoWindow({
+            content: content
+    });
+    infowindow.open(map, pdv);
+    }))
 
 }
 
@@ -66,4 +71,5 @@ $(document).ready(function(){
   //Start with the first
 
   $('.selectState.active').click();
+
 });

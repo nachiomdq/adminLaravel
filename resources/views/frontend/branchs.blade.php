@@ -59,6 +59,7 @@
     var icono = '{{asset('client-front/images/icon-mapa.png')}}';
     var latitude = "";
     var longitude = "";
+    
   </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="{{asset('client-front/map/branchs.js')}}"></script>
