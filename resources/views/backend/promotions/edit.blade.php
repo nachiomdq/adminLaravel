@@ -8,7 +8,7 @@
           <div class="row items-push">
               <div class="col-sm-8">
                   <h1 class="page-heading">
-                      Nueva  subcategoría
+                      Edición de promoción  <small>{{$promotion->name}}</small>
                   </h1>
               </div>
 
@@ -30,7 +30,7 @@
                     <div class="form-group">
                       <div class="col-xs-12">
                         <label for="name">Nombre</label>
-                        <input class="form-control input-lg" type="text" id="name" name="name" value="">
+                        <input class="form-control input-lg" type="text" id="name" name="name" value="{{$promotion->name}}">
                       </div>
 
                     </div>
@@ -42,20 +42,67 @@
                       <div class="col-xs-12">
                         <label for="name">Descripción</label>
 
-                        <textarea class="form-control" name="descripcion"></textarea>
+                        <textarea class="form-control summernote" name="descripcion">{{$promotion->description}}</textarea>
                       </div>
 
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
 
+                       <div class="col-xs-12">
+                         <label for="name">País</label>
+                         <select class="form-control" id="countries"  name="countries" >
+
+                            @foreach($countries as $country)
+                              <option <?php if($country->id == $promotion->country_id) echo "selected=selected";?>  value="{{$country->id}}">{{$country->name}}</option>
+                            @endforeach
+
+                         </select>
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
+               <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                      <div class="col-xs-12">
+                        <label for="name">Imágen de portada</label>
+                          <!-- Summernote Container -->
+
+                          <div class="fileinput fileinput-exists" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;clear:both">
+                              <img src="http://placehold.it/200x150">
+
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+                              @if($promotion->cover_image)
+                                   <img src="{{asset('storage/promotions/' . $promotion->cover_image)}}" class="img-responsive" alt="">
+                               @else
+                                 	  <img src="http://placehold.it/200x150">
+                               @endif
+
+                            </div>
+                            <div>
+                              <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="coverimage"></span>
+                              <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                            </div>
+                          </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
                       <div class="col-xs-12">
                         <label for="name">URL SEO</label>
 
-                          <input  class="form-control input-lg" type="text" name="friendly_url" id="friendly_url" value="">
+                          <input  class="form-control input-lg" type="text" name="friendly_url" id="friendly_url" value="{{$promotion->friendly_url}}">
 
 
                       </div>
@@ -69,7 +116,7 @@
                     <div class="form-group">
                         <div class="col-xs-12">
                             <button class="btn btn-success" type="submit"><i class="fa fa-check push-5-r"></i> Guardar</button>
-                          
+                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban push-5-r"></i> Cancelar</button>
                         </div>
                     </div>
                   </div>
@@ -99,8 +146,8 @@
 
 <script>
 
-var urlAPI = "{{ url('api/subcategories/create/') }}";
-var urlController = "{{ url('admin/subcategories') }}";
+var urlAPI = "{{ url('api/promotions/edit/'.$promotion->id) }}";
+var urlController = "{{ url('admin/promotions') }}";
 $(document).ready(function(){
 
 
@@ -111,7 +158,22 @@ $(document).ready(function(){
     $("#friendly_url").val(Text);
   });
 
+    $('.summernote').summernote({
+            height:150,
+      callbacks: {
 
+          onPaste: function (e) {
+              var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+
+              e.preventDefault();
+
+              // Firefox fix
+              setTimeout(function () {
+                  document.execCommand('insertText', false, bufferText);
+              }, 10);
+          }
+      }
+    });
   $("#form").on('submit', function(e) {
       e.preventDefault();
       //showSpinner();
@@ -129,7 +191,7 @@ $(document).ready(function(){
 
               swal({
                   title: "Éxito",
-                  text: "El elemento se ha creado correctamente",
+                  text: "El elemento se ha editado correctamente",
                   type: "success",
                   showCancelButton: false,
                   confirmButtonColor: "#DD6B55",

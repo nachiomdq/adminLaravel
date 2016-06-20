@@ -37,6 +37,11 @@ class CreateBranchOfficesTable extends Migration
      */
     public function down()
     {
+        Schema::table('branch_offices', function ($table) {
+            $table->dropForeign('branch_offices_country_id_foreign');
+            $table->dropForeign('branch_offices_state_id_foreign');
+        });
+
         Schema::drop('branch_offices');
     }
 }

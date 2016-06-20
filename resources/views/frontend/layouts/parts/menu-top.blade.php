@@ -1,3 +1,4 @@
+@inject('bladeHelper', 'App\Helpers\BladeHelper')
 <div id="menu-top">
   <div class="top">
     <div class="wp">
@@ -6,13 +7,13 @@
       </div>
       <div class="menu">
         <ul>
-          <li><a href="{{url('contacto')}}">Contacto</a></li>
-          <li><a href="{{url('sucursales')}}">Sucursales</a></li>
-          <li><a href="{{url('precurados')}}">Precurados</a></li>
-          <li><a href="{{url('la-empresa')}}">Empresa</a></li>
-          <li><a href="{{url('informacion-tecnica')}}">Inf. Técnica</a></li>
-          <li><a href="{{url('productos')}}">Productos</a></li>
-          <li><a href="{{url('/')}}" class="active">Home</a></li>
+          <li><a href="{{url('contacto')}}" class="{{ $bladeHelper->selectPage('contacto') }}">Contacto</a></li>
+          <li><a href="{{url('sucursales')}}" class="{{ $bladeHelper->selectPage('sucursales') }}">Sucursales</a></li>
+          <li><a href="{{url('precurados')}}" class="{{ $bladeHelper->selectPage('precurados') }}">Precurados</a></li>
+          <li><a href="{{url('la-empresa')}}" class="{{ $bladeHelper->selectPage('la-empresa') }}">Empresa</a></li>
+          <li><a href="{{url('informacion-tecnica')}}" class="{{ $bladeHelper->selectPage('informacion-tecnica') }}">Inf. Técnica</a></li>
+          <li><a href="{{url('productos')}}" class="{{ $bladeHelper->selectPage('productos') }}">Productos</a></li>
+          <li><a href="{{url('/')}}" class="{{ $bladeHelper->selectPage('/') }}">Home</a></li>
         </ul>
       </div>
     </div>

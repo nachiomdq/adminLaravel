@@ -8,7 +8,7 @@
           <div class="row items-push">
               <div class="col-sm-8">
                   <h1 class="page-heading">
-                      Nueva  subcategoría
+                      Nueva  promoción
                   </h1>
               </div>
 
@@ -42,13 +42,56 @@
                       <div class="col-xs-12">
                         <label for="name">Descripción</label>
 
-                        <textarea class="form-control" name="descripcion"></textarea>
+                        <textarea class="form-control summernote" name="descripcion"></textarea>
                       </div>
 
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
 
+                       <div class="col-xs-12">
+                         <label for="name">País</label>
+                         <select class="form-control" id="countries"  name="countries" >
+                          
+                            @foreach($countries as $country)
+                              <option value="{{$country->id}}">{{$country->name}}</option>
+                            @endforeach
+
+                         </select>
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
+                <div class="row">
+                 <div class="col-sm-12">
+                     <div class="form-group">
+                       <div class="col-xs-12">
+                         <label for="name">Imágen de portada</label>
+                           <!-- Summernote Container -->
+
+                           <div class="fileinput fileinput-new" data-provides="fileinput">
+                             <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;clear:both">
+                               <img src="http://placehold.it/200x150">
+
+                             </div>
+                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;">
+
+
+                             </div>
+                             <div>
+                               <span class="btn btn-default btn-file"><span class="fileinput-new">Seleccionar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="coverimage"></span>
+                               <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Quitar</a>
+                             </div>
+                           </div>
+                       </div>
+
+                     </div>
+                   </div>
+                 </div>
                <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -69,7 +112,7 @@
                     <div class="form-group">
                         <div class="col-xs-12">
                             <button class="btn btn-success" type="submit"><i class="fa fa-check push-5-r"></i> Guardar</button>
-                          
+
                         </div>
                     </div>
                   </div>
@@ -99,11 +142,26 @@
 
 <script>
 
-var urlAPI = "{{ url('api/subcategories/create/') }}";
-var urlController = "{{ url('admin/subcategories') }}";
+var urlAPI = "{{ url('api/promotions/create/') }}";
+var urlController = "{{ url('admin/promotions') }}";
 $(document).ready(function(){
 
+  $('.summernote').summernote({
+          height:150,
+    callbacks: {
 
+        onPaste: function (e) {
+            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+
+            e.preventDefault();
+
+            // Firefox fix
+            setTimeout(function () {
+                document.execCommand('insertText', false, bufferText);
+            }, 10);
+        }
+    }
+  });
   $("#name").keyup(function(){
     var Text = $(this).val();
     Text = Text.toLowerCase();
@@ -111,7 +169,10 @@ $(document).ready(function(){
     $("#friendly_url").val(Text);
   });
 
+  $("#countries").select2({
 
+
+  });
   $("#form").on('submit', function(e) {
       e.preventDefault();
       //showSpinner();

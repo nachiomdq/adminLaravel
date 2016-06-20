@@ -41,6 +41,7 @@ Route::group(['prefix' => 'api','middleware' => ['auth', 'auth.admin']], functio
           Route::controller('categories', 'API\CategoriesController');
           Route::controller('subcategories', 'API\SubCategoriesController');
           Route::controller('branchs', 'API\BranchsController');
+          Route::controller('promotions', 'API\PromotionsController');
           Route::post('media/uploadFiles', 'API\MediaController@uploadFiles');
     });
 
@@ -71,6 +72,12 @@ Route::group(['as' => 'admin::', 'prefix' => 'admin','middleware' => ['auth', 'a
           Route::get('/list', 'BranchsController@getList');
           Route::get('/edit/{id}', 'BranchsController@getEdit');
           Route::get('/new', 'BranchsController@getNew');
+    });
+    Route::group(['prefix'=>'promotions','middleware' => ['auth', 'auth.admin']], function(){
+
+          Route::get('/list', 'PromotionsController@getList');
+          Route::get('/edit/{id}', 'PromotionsController@getEdit');
+          Route::get('/new', 'PromotionsController@getNew');
     });
 
 

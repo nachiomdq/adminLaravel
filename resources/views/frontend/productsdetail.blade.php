@@ -17,7 +17,7 @@
     <div class="titular" style="">
   		<div class="wp">
   			<div class="titulo">
-  				<h2>{{$product[0]->name}}</h2>
+  				<h1>{{$product[0]->name}}</h1>
   				<h3>{{$product[0]->subtitle}}</h3>
   			</div>
   		</div>
@@ -48,7 +48,7 @@
   				</div>
           <div class="tabla">
             {!!html_entity_decode($product[0]->table_of_sizes)!!}
-          
+
           </div>
   			</div>
 

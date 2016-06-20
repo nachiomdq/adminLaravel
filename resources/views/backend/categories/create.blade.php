@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <div class="col-xs-12">
                             <button class="btn btn-success" type="submit"><i class="fa fa-check push-5-r"></i> Guardar</button>
-                            <button class="btn btn-danger" type="submit"><i class="fa fa-ban push-5-r"></i> Cancelar</button>
+                            
                         </div>
                     </div>
                   </div>

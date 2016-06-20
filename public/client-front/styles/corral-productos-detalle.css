@@ -345,7 +345,7 @@
 	width: 100%;
 }
 
-.titular .titulo h2 {
+.titular .titulo h1 {
 	float: left;
 	font-family: "Montserrat" ;
 	font-weight: 400;
@@ -357,7 +357,7 @@
 	width: 100%;
 }
 
-.titular .titulo h2 b {
+.titular .titulo h1 b {
 	font-weight: 400;
 	color: #f7cc00;
 }

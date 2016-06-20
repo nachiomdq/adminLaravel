@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://23.23.11.107/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/sucursales</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/productos</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/producto/pirelli-atr</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/producto/caban-de-casillas</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/producto/asociacion-yanez</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/index.php</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/index.php/sucursales</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/index.php/productos</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/index.php/producto/pirelli-atr</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/index.php/producto/caban-de-casillas</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://23.23.11.107/index.php/producto/asociacion-yanez</loc>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>

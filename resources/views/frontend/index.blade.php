@@ -65,20 +65,17 @@
 
 				<div class="lista">
 					<ul>
-						<li>
-							<div class="imagen">
-								<img src="{{asset('client-front/promociones/promo1.png')}}" alt="p1" width="260" height="260">
-							</div>
-							<p> <i class="fa fa-heart"></i>Sólo para CABA y Gran Buenos Aires.</p>
-							<a href="#">Ver Promoción</a>
-						</li>
-						<li>
-							<div class="imagen">
-								<img src="{{asset('client-front/promociones/promo2.png')}}" alt="p1" width="260" height="260">
-							</div>
-							<p>En neumáticos para auto y camioneta.</p>
-							<a href="#">Ver Promoción</a>
-						</li>
+            @foreach($promotions as $promotion)
+              <li>
+  							<div class="imagen">
+  								<img src="{{asset('storage/promotions/'.$promotion->cover_image)}}" alt="p1" width="260" height="260">
+  							</div>
+  							<p> <i class="fa fa-heart"></i>{{$promotion->name}}</p>
+  							<a href="{{url('promocion/'.$promotion->friendly_url)}}">Ver promoción</a>
+  						</li>
+            @endforeach
+
+
 					</ul>
 				</div>
 

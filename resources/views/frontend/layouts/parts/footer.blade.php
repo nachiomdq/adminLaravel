@@ -25,7 +25,7 @@
 					<li><a href="{{url('informacion-tecnica')}}">Tablas</a></li>
 				</ul>
 				<ul style="width: 10%;">
-					<li><a href="{{url('empresa')}}">EMPRESA</a></li>
+					<li><a href="{{url('la-empresa')}}">EMPRESA</a></li>
 				</ul>
 				<ul style="width: 10%;">
 					<li><a href="{{url('precurados')}}">PRECURADOS</a></li>

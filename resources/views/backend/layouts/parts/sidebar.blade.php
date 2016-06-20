@@ -83,6 +83,18 @@
 
                         </ul>
                     </li>
+                  <li class="{{ $bladeHelper->openStatus('promotions') }} }">
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-tag"></i><span class="sidebar-mini-hide">Promociones</span></a>
+                        <ul>
+                            <li>
+                                  <a class="{{ $bladeHelper->selectPage('promotions/list') }}" href="{{url('admin/promotions/list')}}">Listado</a>
+                            </li>
+                            <li>
+                                  <a class="{{ $bladeHelper->selectPage('promotions/new') }}" href="{{url('admin/promotions/new')}}">Crear nueva</a>
+                            </li>
+
+                        </ul>
+                    </li>
                   <li class="hide">
                         <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="si si-envelope"></i><span class="sidebar-mini-hide">Sucursales</span></a>
                         <ul>

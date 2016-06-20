@@ -9,18 +9,20 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories;
 use Meta;
 use App\Models\Products;
+use App\Models\Promotions;
 class HomeController extends Controller
 {
     //
     //
 
     public function getIndex(){
+      $countryID = 1; // seo location stage 2
+
       $this->data['categories'] = Categories::all();
-
-
       #Get featured products
       $this->data['featureds'] = Products::where('featured',1)->get();
-
+      #Get Promotions
+      $this->data['promotions'] = Promotions::where('country_id',$countryID)->get();
 
       #SEO
       Meta::setTitle("Neumáticos Corral");
