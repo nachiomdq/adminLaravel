@@ -1,3 +1,7 @@
+
+
+
+
 $(".selectState").on('click', function(e) {
   $(".cuerpo").LoadingOverlay("show");
   e.preventDefault();
@@ -16,6 +20,7 @@ $(".selectState").on('click', function(e) {
       $(".cuerpo").LoadingOverlay("hide");
       $('#ajax-response').html(response);
       initMap(stateID);
+      initFind();
   });
 
 
@@ -48,6 +53,18 @@ function initMap(stateID){
 
 
 }
+function initFind(){
+  $(".findInMap").on('click', function(e) {
+    e.preventDefault();
+    var latitude = $(this).attr('data-latitude');
+    var longitude = $(this).attr('data-longitude');
+
+    var center = new google.maps.LatLng(latitude, longitude);
+    // using global variable:
+    map.panTo(center);
+
+  });
+}
 function windowMap(content,value){
   var pdv = new google.maps.Marker({
       position: new google.maps.LatLng(value.latitude,value.longitude),
@@ -65,6 +82,7 @@ function windowMap(content,value){
     }))
 
 }
+
 
 $(document).ready(function(){
 

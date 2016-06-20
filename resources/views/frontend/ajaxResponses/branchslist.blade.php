@@ -20,13 +20,14 @@
       @if($branchs->count()!=0)
         <ul>
         @foreach($branchs as $branch)
-        
+
           <li>
             <h3>{{$branch->name}}</h3>
             <h4>{{$branch->subtitle}}</h4>
             <div class="description">
               {!! html_entity_decode($branch->description)!!}
             </div>
+            <small class="findInMap" data-latitude="{{$branch->latitude}}" data-longitude="{{$branch->longitude}}">Ubicar en mapa</small>
 
 
           </li>

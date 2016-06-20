@@ -179,6 +179,19 @@
                     </div>
                   </div>
                 </div>
+                 <div class="row">
+                  <div class="col-sm-12">
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="name">Destacado?</label><br>
+                            <label class="css-input switch switch-default">
+                                <input name="featured" type="checkbox" checked=""><span></span>
+                            </label>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">

@@ -517,6 +517,16 @@
 	margin-bottom: 50px;
 	margin-right: 5%;
 }
+.cuerpo .cold .lista ul li small {
+	font-size:11px;
+	color: #3d3c3b;
+	cursor:pointer;
+}
+.cuerpo .cold .lista ul li small:hover {
+	font-size:11px;
+	color: #e5b200;
+	cursor:pointer;
+}
 .cuerpo .cold .lista ul li .description ul  {
 
 

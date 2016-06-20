@@ -39,21 +39,18 @@
 					<h2>Productos Destacados</h2>
 				</div>
 				<div class="lista">
-					<ul>
-						<li>
-							<div class="imagen">
-								<img src="{{asset('client-front/productos/p1.png')}}" alt="p1" width="260" height="260">
-							</div>
-							<h3>Pirelli Scorpion ATR</h3>
-							<a href="#">Ir al producto</a>
-						</li>
-						<li>
-							<div class="imagen">
-								<img src="{{asset('client-front/productos/p1.png')}}" alt="p1" width="260" height="260">
-							</div>
-							<h3>Pirelli P7 Cinturato</h3>
-							<a href="#">Ir al producto</a>
-						</li>
+
+					<ul class="slider featuredCarousel">
+            @foreach($featureds as $featured)
+              <li>
+  							<div class="imagen">
+  								<img src="{{asset('client-front/productos/p1.png')}}" alt="p1" width="260" height="260">
+  							</div>
+  							<h3>{{$featured->name}}</h3>
+  							<a href="{{url('producto/'.$featured->friendly_url)}}">Ir al Producto</a>
+  						</li>
+            @endforeach
+
 					</ul>
 				</div>
 			</div>
@@ -126,5 +123,25 @@
 @endsection
 
 @section('custom-css')
+
   <link href="{{asset('client-front/styles/corral-home.css')}}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{{asset('client-front/scripts/slick/slick.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('client-front/scripts/slick/slick-theme.css')}}">
+@endsection
+@section('custom-scripts')
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.featuredCarousel').slick({
+
+        infinite: true,
+        centerMode:true,
+        slidesToShow: 2,
+        slidesToScroll: 1
+      });
+    });
+
+  </script>
+
+
 @endsection

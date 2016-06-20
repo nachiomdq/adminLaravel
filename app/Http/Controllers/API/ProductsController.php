@@ -61,6 +61,7 @@ class ProductsController extends Controller
       try {
 
           $data = $request->all();
+
           $element = Products::find($productID);
           $element->name = $data['name'];
           $element->description = $data['descripcion'];
@@ -68,14 +69,10 @@ class ProductsController extends Controller
           $element->characteristics = $data['characteristics'];
           $element->tags = $data['tags'];
           $element->table_of_sizes  = $data['table_of_sizes'];
-        /*  $arrayElement = array();
-          $i = 0;
-          foreach (json_decode($data['tableHidden'],true) as $table) {
-
-            $arrayElement[$i++] = $table;
+          if(isset($data['featured'])){
+            $element->featured = true;
           }
 
-          $element->table_of_sizes = json_encode($arrayElement,true);*/
           if($request->file('coverimage')){
             $name = time()."_".$request->file('coverimage')->getClientOriginalName();
             $element->cover_image =$name;
@@ -86,7 +83,7 @@ class ProductsController extends Controller
 
           }
 
-          $element->friendly_url = $data['friendly_url'];
+          $element->table_of_sizes  = $data['table_of_sizes'];
           $element->save();
 
           #Update relationships
@@ -118,14 +115,11 @@ class ProductsController extends Controller
           $element->subtitle = $data['subtitle'];
           $element->characteristics = $data['characteristics'];
           $element->tags = $data['tags'];
-          $arrayElement = array();
-          $i = 0;
-          foreach (json_decode($data['tableHidden'],true) as $table) {
-
-            $arrayElement[$i++] = $table;
+          if(isset($data['featured'])){
+            $element->featured = true;
           }
 
-          $element->table_of_sizes = json_encode($arrayElement,true);
+          $element->table_of_sizes = $data['table_of_sizes'];
           if($request->file('coverimage')){
             $name = time()."_".$request->file('coverimage')->getClientOriginalName();
             $element->cover_image =$name;
