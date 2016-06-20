@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Branchs;
 use App\Models\States;
-
+use Meta;
 class BranchController extends Controller
 {
       public function getIndex(){
