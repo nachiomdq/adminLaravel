@@ -68,8 +68,8 @@
   						<h3>Asunto</h3>
   						<input type="text" required class="input-texto" name="subject" id="subject">
   						<h3>Consulta</h3>
-  						<textarea class="input-area"></textarea>
-  						<button type="submit" required name="query" id="query" class="boton-enviar">Enviar Consulta</button>
+  						<textarea  required name="query" id="query"  class="input-area"></textarea>
+  						<button type="submit"class="boton-enviar">Enviar Consulta</button>
   					</form>
   				</div>
           <div class="envio-ok" style="display:none">
