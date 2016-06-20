@@ -12,12 +12,20 @@
 */
 
 
-
+Route::get('/sparkpost', function () {
+  Mail::send('email.test', [], function ($message) {
+    $message
+      ->from('from@yourdomain.com', 'Your Name')
+      ->to('ignacio.marchiano@gmail.com', 'Receiver Name')
+      ->subject('From SparkPost with ❤');
+  });
+});
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/', 'FrontEnd\HomeController@getIndex');// BASE PATH ADMIN
 Route::get('/sucursales', 'FrontEnd\BranchController@getIndex');
+Route::get('/contacto', 'FrontEnd\ContactController@getIndex');
 Route::get('/productos', 'FrontEnd\ProductsController@getIndex');
 Route::get('/producto/{FRIENDLYURL}', 'FrontEnd\ProductsController@getDetail');
 /**

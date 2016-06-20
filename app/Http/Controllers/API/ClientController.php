@@ -17,11 +17,41 @@ use App\Models\Branchs;
 use App\Models\Subcategories;
 use App\Models\Categories;
 use App\Models\Products;
+use App\Models\Contacts;
 
 
 class ClientController extends Controller
 {
     //
+    public function postContact(Request $request){
+      try {
+          $data = $request->all();
+          $contact = new Contacts;
+          $contact->name = $data['name'];
+          $contact->lastname = $data['lastname'];
+          $contact->email = $data['email'];
+          $contact->subject = $data['subject'];
+          $contact->tel = $data['tel'];
+          $contact->query = $data['query'];
+          $contact->save();
+
+          #SendEMAIL to admin to notify the new contact
+          #We send through sparkPost
+          
+
+          $r = new ApiResponse();
+          $r->success = true;
+          $r->message = 'OK';
+          $r->data = [];
+          return $r->doResponse();
+      } catch (Exception $e) {
+          $r = new ApiResponse();
+          $r->success = false;
+          $r->message = $e->getMessage();
+          return $r->doResponse();
+      }
+
+    }
     public function getListBranchsByState(){
       try {
         $countryID = 1; // cuando sea multiCountry detectar la variable de sesion
