@@ -21,20 +21,25 @@
 {
     font-size: 0;
     line-height: 0;
+
     position: absolute;
-    top: 18%;
+    top: 50%;
+
     display: block;
-    width: 40px;
-    height: 40px;
+
+    width: 20px;
+    height: 20px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+
     cursor: pointer;
+
     color: transparent;
     border: none;
     outline: none;
-    background: #f5f2ee;
+    background: transparent;
 }
 .slick-prev:hover,
 .slick-prev:focus,
@@ -62,17 +67,19 @@
 .slick-next:before
 {
     font-family: 'slick';
-    font-size: 31px;
+    font-size: 20px;
     line-height: 1;
+
     opacity: .75;
-    /* color: #3d3c3b; */
+    color: white;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .slick-prev
 {
-    left: 6px;
+    left: -25px;
 }
 [dir='rtl'] .slick-prev
 {
@@ -82,21 +89,15 @@
 .slick-prev:before
 {
     content: '←';
-    background-image: url(../../images/slider-arrow-left-iddle.png);
-    background-repeat: no-repeat;
-    background-position: left center;
 }
 [dir='rtl'] .slick-prev:before
 {
     content: '→';
-    background-image: url(../../images/slider-arrow-right-iddle.png);
-    background-repeat: no-repeat;
-    background-position: left center;
 }
 
 .slick-next
 {
-    right: -2px;
+    right: -25px;
 }
 [dir='rtl'] .slick-next
 {
@@ -105,10 +106,7 @@
 }
 .slick-next:before
 {
-     content: '→';
-    background-image: url(../../images/slider-arrow-right-iddle.png);
-    background-repeat: no-repeat;
-    background-position: left center;
+    content: '→';
 }
 [dir='rtl'] .slick-next:before
 {

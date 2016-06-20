@@ -20,7 +20,7 @@ class HomeController extends Controller
 
       $this->data['categories'] = Categories::all();
       #Get featured products
-      $this->data['featureds'] = Products::where('featured',1)->get();
+      $this->data['featureds'] = Products::where('featured',1)->get()->take(2);
       #Get Promotions
       $this->data['promotions'] = Promotions::where('country_id',$countryID)->get();
 

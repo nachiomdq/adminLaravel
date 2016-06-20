@@ -15,6 +15,19 @@
           </div>
         </div>
       </div>
+      <div class="item" style="background-image: url({{asset('client-front/images/Home-bg-1.jpg')}});">
+        <div class="wp">
+          <div class="titulo">
+            <h3>Scorpion ATR</h3>
+          </div>
+          <div class="copete">
+            <p>Control Todo Terreno</p>
+          </div>
+          <div class="boton">
+            <a href="#">Descubrila</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="wp">
       <div class="nav">
@@ -40,7 +53,7 @@
 				</div>
 				<div class="lista">
 
-					<ul class="slider featuredCarousel">
+					<ul class=" featuredCarousel">
             @foreach($featureds as $featured)
               <li>
   							<div class="imagen">
@@ -129,12 +142,20 @@
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   <script>
     $(document).ready(function() {
-      $('.featuredCarousel').slick({
+
+      $('.slider').slick({
 
         infinite: true,
-        centerMode:true,
-        slidesToShow: 2,
-        slidesToScroll: 1
+        centerMode:false,
+        arrows:false
+      });
+      $('.arrow-l').click(function(){
+
+        $('.slider').slick('slickPrev');
+      });
+      $('.arrow-r').click(function(){
+
+        $('.slider').slick('slickNext');
       });
     });
 
