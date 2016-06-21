@@ -22,6 +22,16 @@ class Products extends Model
     public function medias() {
         return $this->belongsToMany('App\Models\Media', 'products_media', 'product_id', 'media_id');
     }
+    public static function getProductsByManyCategories($categories){
+      $query = self::distinct()->select('products.id as DT_RowId', 'products.*')
+
+                  ->join('products_categories', 'products_categories.product_id' ,'=', 'products.id')
+                  ->join('categories', 'products_categories.category_id' ,'=', 'categories.id')
+                  ->whereIn('categories.id',$categories)
+                  ->orderBy('products.name');
+      $collection = $query->get();
+      return $collection;
+    }
     public static function getProductsByCountry($countryID,$status,$take,$offset,$categories=null,$subcategories=null,$search =""){
 
       $query = self::select('products.id as DT_RowId', 'products.*','products_countries.price')
@@ -62,7 +72,7 @@ class Products extends Model
 
     }
     public static function getProductsByCountryCount($countryID,$status,$take=null,$offset=null,$categories=null,$subcategories=null,$search= ""){
-      
+
       $collection = self::getProductsByCountry($countryID,$status,$take,$offset,$categories,$subcategories,$search);
       return $collection->count();
 

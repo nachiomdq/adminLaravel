@@ -1,0 +1,484 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Neumáticos Corral</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+
+<link href="styles/corral-common.css" rel="stylesheet" type="text/css">
+<link href="styles/corral-productos-detalle-v2.css" rel="stylesheet" type="text/css">
+
+
+<script src="scripts/jquery-1.4.2.js"></script>
+<script src="scripts/jquery.cycle.all.js"></script>
+<script src="scripts/jquery.easing.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="map/caba.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+
+	$("#menu-top").css("top", "-110px" );
+
+
+	$(window).scroll(function() {
+
+	if ($(window).scrollTop() >= 150){
+
+				$("#menu-top").css("top", "0px" );
+
+
+	    } else {
+
+				$("#menu-top").css("top", "-110px" );
+
+	    }
+
+
+	});
+
+
+
+});
+
+
+
+</script>
+
+</head>
+
+<body>
+
+	<div id="menu-top">
+		<div class="top">
+			<div class="wp">
+				<div class="logo">
+					<img src="images/header-logo.png" alt="header-logo" width="88" height="53">
+				</div>
+				<div class="menu">
+					<ul>
+						<li><a href="contacto.php">Contacto</a></li>
+						<li><a href="sucursales.php">Sucursales</a></li>
+						<li><a href="precurados.php">Precurados</a></li>
+						<li><a href="empresa.php">Empresa</a></li>
+						<li><a href="informacion-tecnica.php">Inf. Técnica</a></li>
+						<li><a href="productos.php" class="active">Productos</a></li>
+						<li><a href="index.php">Home</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="wp">
+				<div class="seccion">
+					<ul>
+						<li>
+							<a href="#" class="active">Auto</a>
+						</li>
+						<li>
+							<a href="#">Camioneta</a>
+						</li>
+						<li>
+							<a href="#">Camión</a>
+						</li>
+						<li>
+							<a href="#">Agrícola</a>
+						</li>
+						<li>
+							<a href="#">Industrial</a>
+						</li>
+						<li>
+							<a href="#">OTR</a>
+						</li>
+						<li>
+							<a href="#">Cámaras</a>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="top">
+		<div class="wp">
+			<div class="pais">
+				<ul>
+					<li>
+						<a href="#" class="active">ARGENTINA</a>
+					</li>
+					<li>
+						<a href="#">URUGUAY</a>
+					</li>
+				</ul>
+			</div>
+			<div class="submenu">
+				<ul>
+					<li>
+						<a href="contacto.php">CONTACTO</a>
+					</li>
+					<li>
+						<a href="sucursales.php">SUCURSALES</a>
+					</li>
+				</ul>
+			</div>
+			<div class="pirelli">
+				<img src="images/logo-pirelli.png" alt="logo-pirelli" width="88" height="22">
+			</div>
+		</div>
+	</div>
+
+	<div class="header">
+
+		<div class="wp">
+			<div class="logo">
+				<img src="images/header-logo.png" alt="header-logo" width="150" height="90">
+			</div>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="precurados.php" style="padding-right:0px;">Precurados</a>
+					</li>
+					<li>
+						<a href="empresa.php">Empresa</a>
+					</li>
+					<li>
+						<a href="informacion-tecnica.php">Inf. Técnica</a>
+					</li>
+					<li>
+						<a href="productos.php" class="active">Productos</a>
+					</li>
+					<li>
+						<a href="index.php">Home</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div class="filtros">
+
+		<div class="wp">
+			<ul>
+				<li>
+					<a href="#" class="active">Auto</a>
+				</li>
+				<li>
+					<a href="#">Camioneta</a>
+				</li>
+				<li>
+					<a href="#">Camión</a>
+				</li>
+				<li>
+					<a href="#">Agrícola</a>
+				</li>
+				<li>
+					<a href="#">Industrial</a>
+				</li>
+				<li>
+					<a href="#">OTR</a>
+				</li>
+				<li>
+					<a href="#">Cámaras</a>
+				</li>
+			</ul>
+		</div>
+
+
+	</div>
+
+
+
+	<div class="cuerpo">
+		<div class="wp">
+
+			<div class="coli">
+				<div class="titulo">
+					<h2>Líneas de esta Categoría</h2>
+				</div>
+				<div class="lista">
+					<ul>
+						<li>
+							<a href="#" class="active">Todos</a>
+						</li>
+						<li>
+							<a href="#">Convencional</a>
+						</li>
+						<li>
+							<a href="#">Radial</a>
+						</li>
+						<li>
+							<a href="#">Otros Productos</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="titulo" style="margin-top:80px;">
+					<h2>Productos de esta Línea</h2>
+				</div>
+				<div class="lista">
+					<ul>
+						<li>
+							<a href="#" class="active">Pirelli P-Zero</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Zero</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Max</a>
+						</li>
+						<li>
+							<a href="#">Pirelli T1</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Zero</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Max</a>
+						</li>
+						<li>
+							<a href="#">Pirelli T1</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Zero</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Max</a>
+						</li>
+						<li>
+							<a href="#">Pirelli T1</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Zero</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Max</a>
+						</li>
+						<li>
+							<a href="#">Pirelli T1</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Zero</a>
+						</li>
+						<li>
+							<a href="#">Pirelli Max</a>
+						</li>
+						<li>
+							<a href="#">Pirelli T1</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</div>
+
+
+			<div class="cold">
+
+
+				<div class="titulo">
+					<h4>Auto / Radial / Pirelli P-Zero</h4>
+
+				</div>
+
+
+
+				<div class="descripcion">
+
+					<div class="tl">
+						<h1>Pirelli <b>P-Zero</b></h1>
+						<h2>Estabilidad Dinámica</h2>
+					</div>
+
+					<div class="tr">
+						<div class="foto">
+							<img src="productos/pzero-nero-top.jpg" alt="pzero-nero-top">
+						</div>
+					</div>
+
+
+					<p class="copete">
+<b>Pirelli responde a la potencia extrema!</b> Este producto es equipo original en los más prestigiosos automóviles deportivos y de lujo, y es además el neumático de referencia para los tuners. P Zero System es el primer sistema de neumáticos direccionales y asimétricos Ultra High Performance en el mundo. Fueron diseñados para ser usados en conjunto o separadamente, de acuedo con el tipo de automóvil, las condiciones de uso y el estilo de manejo.
+					</p>
+
+					<p class="texto">
+<b>El P Zero Direzionale resuelve el problema de la adherencia en piso mojado y el aquaplaning asociado con los automóviles, equipados con neumáticos de sección ancha.</b><br><br>
+El P Zero Direzionale maximiza la expulsión del agua, dejando una superficie más seca para el neumático trasero Asimmetrico. El compuesto de la banda de rodaje es una exclusiva composición de Pirelli, con sílica y polímeros sintéticos, que proveen un mayor grado de adherencia. P Zero System es la alternativa ideal para realizar conversiones. Su construcción de competición ofrece una superior resistencia a la torsión, mejor adherencia y buena respuesta de dirección bajo condiciones difíciles de manejo.
+
+					</p>
+
+
+				</div>
+
+				<div class="fotos">
+					<ul>
+						<li>
+							<img src="productos/p1.png" alt="p1">
+						</li>
+						<li>
+							<img src="productos/p1.png" alt="p1">
+						</li>
+						<li>
+							<img src="productos/p1.png" alt="p1">
+						</li>
+						<li>
+							<img src="productos/p1.png" alt="p1">
+						</li>
+					</ul>
+				</div>
+
+
+				<div class="titulo">
+					<h4>Características</h4>
+				</div>
+				<div class="lista">
+					<ul>
+						<li>
+							Precisa estabilidad direccional en altas velocidades.
+						</li>
+						<li>
+							Excepcionales niveles de adherencia.
+						</li>
+						<li>
+							Reducido riesgo de aquaplaning.
+						</li>
+						<li>
+							Excepcional agarre en piso húmedo.
+						</li>
+						<li>
+							Más de 120 homologaciones como equipo original dadas por los fabricantes más prestigiosos de automóviles.
+						</li>
+						<li>
+							El concepto del sistema P Zero System.
+						</li>
+
+					</ul>
+				</div>
+				<div class="titulo">
+					<h4>Medidas Disponibles</h4>
+				</div>
+
+				<div class="tabla">
+					<ul>
+						<li>Medida</li>
+						<li>205/45 ZR 17 Reinf</li>
+						<li>225/45 ZR 17</li>
+						<li>235/50 ZR 17</li>
+						<li>255/40 ZR 17</li>
+						<li>255/45 ZR 17</li>
+
+					</ul>
+					<ul>
+						<li>Tipo</li>
+						<li>Sin Cámara</li>																																								<li>Sin Cámara</li>
+						<li>Sin Cámara</li>
+						<li>Sin Cámara</li>
+						<li>Sin Cámara</li>
+					</ul>
+					<ul>
+						<li>Diseño</li>
+						<li>P-Zero Nero</li>																																							<li>P-Zero Nero</li>
+						<li>P-Zero Nero</li>
+						<li>P-Zero Nero</li>
+						<li>P-Zero Nero</li>
+
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="destacado">
+		<div class="wp">
+			<div class="row">
+				<div class="col" style="margin-right:4%;">
+					<div class="titulo">
+						<div class="icono">
+							<img src="images/h2-icon-star.jpg" alt="h2-icon-star" width="45" height="45">
+						</div>
+						<h2>Productos Relacionados</h2>
+					</div>
+					<div class="lista">
+						<ul>
+							<li>
+								<div class="imagen">
+									<img src="productos/p1.png" alt="p1" width="260" height="260">
+								</div>
+								<h3>Pirelli Scorpion ATR</h3>
+								<a href="#">Ir al producto</a>
+							</li>
+							<li>
+								<div class="imagen">
+									<img src="productos/p1.png" alt="p1" width="260" height="260">
+								</div>
+								<h3>Pirelli Scorpion ATR</h3>
+								<a href="#">Ir al producto</a>
+							</li>
+							<li>
+								<div class="imagen">
+									<img src="productos/p1.png" alt="p1" width="260" height="260">
+								</div>
+								<h3>Pirelli Scorpion ATR</h3>
+								<a href="#">Ir al producto</a>
+							</li>
+							<li>
+								<div class="imagen">
+									<img src="productos/p2.png" alt="p1" width="260" height="260">
+								</div>
+								<h3>Pirelli P7 Cinturato</h3>
+								<a href="#">Ir al producto</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<div class="tip">
+		<div class="wp">
+			<div class="titulo">
+				<div class="icono">
+					<img src="images/h2-icon-tip.jpg" alt="h2-icon-star" width="45" height="45">
+				</div>
+				<h2>Sabías que</h2>
+			</div>
+			<h4>Los neumáticos tienen fecha de vencimiento...</h4>
+			<p>Luego de 5 años de fabricados, los neumáticos pierden propiedades fundamentales a la hora de brindar seguridad a tu vehículo, es por eso que
+recomendamos hacer una revisión en un taller especializado para chequear el estado de los mismos.</p>
+		</div>
+	</div>
+
+	<div class="sucursales">
+		<div class="wp">
+			<h2><a href="#">encuentra tu sucursal más cercana aquí</a></h2>
+		</div>
+	</div>
+
+	<div class="mapa">
+		<div id="map-canvas">
+		</div>
+	</div>
+
+
+	<? include_once("footer.php");?>
+
+
+
+
+</body>
+</html>

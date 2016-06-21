@@ -28,6 +28,7 @@ Route::get('/sucursales', 'FrontEnd\BranchController@getIndex');
 Route::get('/contacto', 'FrontEnd\ContactController@getIndex');
 Route::get('/productos', 'FrontEnd\ProductsController@getIndex');
 Route::get('/producto/{FRIENDLYURL}', 'FrontEnd\ProductsController@getDetail');
+Route::get('/producto2/{FRIENDLYURL}', 'FrontEnd\ProductsController@getDetailv2');
 /**
  * API PUBLICAS
  */
