@@ -10,7 +10,14 @@
 
   		<div id="menu-categories" class="wp">
   			<ul >
-         <li><a href="{{url('productos')}}">Volver</a></li>
+          <?php $i = 0;?>
+          @foreach($categories as $category)
+
+            <li>
+    					<a data-id="{{$category->id}}" href="{{url('productos/'.$category->friendly_url)}}" class="selectCategory <?php if ($category->id == $categoriesSelectedNames[0]->id) echo "active";?>"  >{{$category->name}}</a>
+    				</li>
+            <?php $i++;?>
+          @endforeach
 		    </ul>
   		</div>
     </div>
@@ -23,18 +30,13 @@
   				</div>
   				<div class="lista">
   					<ul>
-  						<li>
-  							<a href="#" class="active">Todos</a>
-  						</li>
-  						<li>
-  							<a href="#">Convencional</a>
-  						</li>
-  						<li>
-  							<a href="#">Radial</a>
-  						</li>
-  						<li>
-  							<a href="#">Otros Productos</a>
-  						</li>
+              @foreach($subcategories as $subcategory)
+                <li>
+    							<a href="#" class="active">{{$subcategory->name}}</a>
+    						</li>
+              @endforeach
+
+
   					</ul>
   				</div>
 
@@ -63,11 +65,11 @@
   				<div class="titulo">
   					<h4>
             @foreach($categoriesSelectedNames as $categoriesNames)
-              {{$categoriesNames->name}} -
+              {{$categoriesNames->name}} @if ($categoriesNames != $categoriesSelectedNames->last() ) - @endif
   					@endforeach
             /
             @foreach($subCategoriesSelectedNames as $subCategoriesNames)
-                {{$subCategoriesNames->name}} -
+                {{$subCategoriesNames->name}} @if ($subCategoriesNames != $subCategoriesSelectedNames->last() ) - @endif
     				@endforeach
             / {{$product[0]->name}}</h4>
 
@@ -101,19 +103,23 @@
   				</div>
 
   				<div class="fotos">
+            		<div class="titulo">
+        					<h4>Imágenes </h4>
+        				</div>
   					<ul>
-  						<li>
-  							<img src="productos/p1.png" alt="p1">
-  						</li>
-  						<li>
-  							<img src="productos/p1.png" alt="p1">
-  						</li>
-  						<li>
-  							<img src="productos/p1.png" alt="p1">
-  						</li>
-  						<li>
-  							<img src="productos/p1.png" alt="p1">
-  						</li>
+              @if($product[0]->medias)
+                @foreach($product[0]->medias as $media)
+                    <li>
+                      <a class="img-link img-thumb" href="{{url('storage/products/'.$media->content)}}">
+                        <img  src="{{url('storage/products/'.$media->content)}}" alt="p1">
+                      </a>
+
+        						</li>
+                @endforeach
+
+
+              @endif
+
   					</ul>
   				</div>
 
@@ -142,10 +148,24 @@
 
 @endsection
 @section('custom-scripts')
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-  <script src="{{asset('client-front/map/caba.js')}}"></script>
+  <script src="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.js')}}"></script>
+  <script>
+  $(document).ready(function(){
+      jQuery('.fotos').each(function(){
+          jQuery(this).magnificPopup({
+              delegate: 'a.img-link',
+              type: 'image',
+              gallery: {
+                  enabled: true
+              }
+          });
+      });
+  });
+  </script>
 
 @endsection
 @section('custom-css')
+  <link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/magnific-popup/magnific-popup.min.css')}}">
+
   <link href="{{asset('client-front/styles/corral-productos-detalle-v2.css')}}" rel="stylesheet" type="text/css">
 @endsection

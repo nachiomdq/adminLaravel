@@ -472,7 +472,7 @@
 	border-bottom-color: #ebe8e5;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	margin-bottom: 40px;
+	/* margin-bottom: 40px; */
 }
 
 .cuerpo .cold .titulo h4 {
@@ -672,11 +672,18 @@
 	padding-right: 40px;
 	list-style: none;
 }
-
+.cuerpo .cold .fotos ul li:first-child {
+	float: left;
+	margin: 0px;
+	width: 25%;
+	margin-left: 0px;
+	text-align: center;
+}
 .cuerpo .cold .fotos ul li {
 	float: left;
 	margin: 0px;
 	width: 25%;
+	margin-left: 10px;
 	text-align: center;
 }
 
@@ -723,8 +730,7 @@
 	float: left;
 	margin: 0px;
 	width: 100%;
-	margin-top: 20px;
-
+	/* margin-top: 20px; */
 }
 
 .cuerpo .cold .tabla ul {

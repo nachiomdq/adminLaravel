@@ -24,9 +24,9 @@
         <ul>
           @foreach($categories as $category)
             <li>
-    					<a data-id="{{$category->id}}" href="#"  class="selectCategory <?php if ($i == 0) echo "active";?>">{{$category->name}}</a>
+    					<a data-id="{{$category->id}}" href="#"  class="selectCategory <?php if ($category->id == $categoriesSelectedNames[0]['id']) echo "active";?>">{{$category->name}}</a>
     				</li>
-            <?php $i++;?>
+
           @endforeach
         </ul>
 

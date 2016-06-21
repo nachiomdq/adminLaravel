@@ -23,7 +23,7 @@
 
 <body>
 
-  @if(Request::is('productos') )
+  @if(Request::is('producto*/*') )
     @include('frontend.layouts.parts.menu-top-products')
   @else
     @include('frontend.layouts.parts.menu-top')

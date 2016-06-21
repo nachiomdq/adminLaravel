@@ -33,6 +33,10 @@ class SubcategoriesSeeder extends Seeder
                 'friendly_url' =>'trasera',
             ],
             [
+                'name'     => 'Industrial',
+                'friendly_url' =>'industrial',
+            ],
+            [
                 'name'     => 'Cámaras de aire',
                 'friendly_url' =>'camaras-de-aires',
             ],

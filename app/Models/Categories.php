@@ -11,7 +11,10 @@ class Categories extends Model
   {
     return $this->belongsToMany('App\Models\Products');
   }
-
+  public function subcategories()
+  {
+    return $this->belongsToMany('App\Models\Subcategories','subcategories_categories','category_id','subcategory_id');
+  }
   public static function getCategories($status,$take,$offset,$search=""){
 
     $query = self::select('categories.id as DT_RowId', 'categories.*');

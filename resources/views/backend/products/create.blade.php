@@ -94,7 +94,7 @@
                       <div class="col-xs-4">
                         <label for="name">Categoría</label>
                           <!-- Summernote Container -->
-                        <select class="form-control" id="categories" name="categories[]" multiple="multiple">
+                        <select onchange="getSubCategories()" class="form-control" id="categories" name="categories[]" multiple="multiple">
                            <option></option>
                            @foreach($categories as $category)
                              <option value="{{$category->id}}"  >{{$category->name}}</option>
@@ -104,12 +104,7 @@
                       <div class="col-xs-4">
                         <label for="name">SubCategoría</label>
                           <!-- Summernote Container -->
-                        <select class="form-control" id="subcategories"  name="subcategories[]" multiple="multiple">
-                           <option></option>
-                           @foreach($subcategories as $subcategory)
-                             <option value="{{$subcategory->id}}" >{{$subcategory->name}}</option>
-                           @endforeach
-                        </select>
+                          <div id="subcategoriesContainer"></div>
                       </div>
                       <div class="col-xs-4">
                         <label for="name">Países</label>
@@ -209,7 +204,7 @@
                     <div class="form-group">
                         <div class="col-xs-12">
                             <button class="btn btn-success" type="submit"><i class="fa fa-check push-5-r"></i> Guardar</button>
-                          
+
                         </div>
                     </div>
                   </div>
@@ -225,7 +220,7 @@
 @endsection
 @section('custom-css')
 
-
+<link rel="stylesheet" href="{{asset('theme/src/assets/js/plugins/dropzonejs/dropzone.min.css')}}">
 @endsection
 @section('custom-scripts')
 
@@ -241,11 +236,31 @@
 var urlAPI = "{{ url('api/products/create') }}";
 var urlController = "{{ url('admin/products') }}";
 var urlMedia = "{{ url('api/media/uploadFiles') }}";
+var urlSubCategories = "{{ url('api/subcategories/subcategories') }}";
 function buildTableSizesToJson(){
 
       console.log($("#tab_logic").find('input').serializeArray());
 
   }
+function getSubCategories(){
+  var catId = $('#categories').val();
+
+  $.ajax({
+      method: "GET",
+      url:urlSubCategories +'/'+catId [0] ,
+
+  }).done(function(response) {
+    console.log(response);
+      $('#subcategoriesContainer').html(response);
+      $("#subcategories").select2({
+        placeholder:"Seleccione una subcategoría",
+        allowClear: true,
+          maximumSelectionLength:1
+      });
+
+  });
+
+}
 $(document).ready(function(){
 
   jQuery('.js-tags-input').tagsInput({
@@ -256,6 +271,7 @@ $(document).ready(function(){
       delimiter: [',']
   });
   $('.summernote').summernote({
+    height:150,
     callbacks: {
         onPaste: function (e) {
             var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
@@ -279,12 +295,10 @@ $(document).ready(function(){
   });
   $("#categories").select2({
     placeholder:"Seleccione una categoría",
-    allowClear: true
+    allowClear: true,
+      maximumSelectionLength:1
   });
-  $("#subcategories").select2({
-    placeholder:"Seleccione una subcategoría",
-    allowClear: true
-  });
+
   $("#countries").select2({
     placeholder:"Países",
     allowClear: true

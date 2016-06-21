@@ -210,7 +210,7 @@
                       <div class="form-group">
                           <div class="col-xs-12">
                               <button class="btn btn-success" type="submit"><i class="fa fa-check push-5-r"></i> Guardar</button>
-                            
+
                           </div>
                       </div>
                     </div>
@@ -276,11 +276,13 @@ $(document).ready(function(){
   });
   $("#categories").select2({
     placeholder:"Seleccione una categoría",
-    allowClear: true
+    allowClear: true,
+    maximumSelectionLength:1
   });
   $("#subcategories").select2({
     placeholder:"Seleccione una subcategoría",
-    allowClear: true
+    allowClear: true,
+    maximumSelectionLength:1
   });
   $("#countries").select2({
     placeholder:"Países",

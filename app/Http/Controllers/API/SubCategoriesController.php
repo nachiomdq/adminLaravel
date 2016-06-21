@@ -18,6 +18,27 @@ use App\Models\Subcategories;
 
 class SubCategoriesController extends Controller
 {
+    public function getSubcategories($categoryID){
+      try {
+
+
+        $arrayCat = array($categoryID);
+        $this->data['subcategories'] = Subcategories::getSubCategoriesByCategory($arrayCat);
+        $r = new ApiResponse();
+        $r->success = true;
+        $r->message = 'Subcategories';
+        $r->data = [];
+        return view('backend.ajaxResponses.subcategories', $this->data);
+
+      
+      } catch (Exception $e) {
+          $r = new ApiResponse();
+          $r->success = false;
+          $r->message = $e->getMessage();
+          return $r->doResponse();
+      }
+
+    }
     public function getDelete($categoryID){
       try {
 

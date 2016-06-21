@@ -17,6 +17,7 @@ class CreateSubcategoriesTable extends Migration
             $table->string('name',255);
             $table->text('description')->nullable();
             $table->text('friendly_url'); //For SEO Purposes
+            
             $table->timestamps();
             $table->softDeletes();
 

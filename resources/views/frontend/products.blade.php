@@ -10,13 +10,13 @@
 
   		<div id="menu-categories" class="wp">
   			<ul >
-          <?php $i = 0;?>
+
           @foreach($categories as $category)
 
             <li>
-    					<a data-id="{{$category->id}}" href="#" class="selectCategory <?php if ($i == 0) echo "active";?>"  >{{$category->name}}</a>
+    					<a href="{{url('productos/'.$category->friendly_url)}}" class="selectCategory <?php if ($category->id == $categoriesSelectedNames[0]['id']) echo "active";?>"  >{{$category->name}}</a>
     				</li>
-            <?php $i++;?>
+
           @endforeach
 		    </ul>
   		</div>
@@ -52,7 +52,7 @@
 
   <script>
     var urlList = "{{url('api/frontend/list-products-by-category')}}"
-
+    var catId = "{{$categoriesSelectedNames[0]['id']}}";
   </script>
   <script src="{{asset('client-front/scripts/productsAjax.js')}}"></script>
 @endsection

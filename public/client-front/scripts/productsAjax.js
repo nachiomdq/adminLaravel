@@ -1,27 +1,4 @@
-$(".selectCategory").on('click', function(e) {
-  $(".cuerpo").LoadingOverlay("show");
-  e.preventDefault();
-  var catId = $(this).attr('data-id');
-  $('.selectCategory').removeClass('active');
-  $('.selectCategory[data-id=' + catId + ']').addClass('active');
 
-  //Save the reference
-  $('#categoryID').val(catId);
-
-  loadSpinner();
-  $.ajax({
-      method: "GET",
-      url: urlList,
-      data: {catId:catId}
-  }).done(function(response) {
-
-      $(".cuerpo").LoadingOverlay("hide");
-      $('#ajax-response').html(response);
-      initSubcategories();
-    });
-
-
-});
 function initSubcategories(){
   $(".selectSubCategory").on('click', function(e) {
 
@@ -58,5 +35,23 @@ $(document).ready(function(){
 
   //Start with the first
 
-  $('.selectCategory.active').click();
+
+    $(".cuerpo").LoadingOverlay("show");
+
+  
+
+    //Save the reference
+    $('#categoryID').val(catId);
+
+    loadSpinner();
+    $.ajax({
+        method: "GET",
+        url: urlList,
+        data: {catId:catId}
+    }).done(function(response) {
+
+        $(".cuerpo").LoadingOverlay("hide");
+        $('#ajax-response').html(response);
+        initSubcategories();
+    });
 });

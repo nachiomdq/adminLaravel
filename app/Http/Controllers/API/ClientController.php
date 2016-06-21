@@ -37,7 +37,7 @@ class ClientController extends Controller
 
           #SendEMAIL to admin to notify the new contact
           #We send through sparkPost
-          
+
 
           $r = new ApiResponse();
           $r->success = true;
@@ -104,7 +104,10 @@ class ClientController extends Controller
 
 
         #List subcategories of those products
-        $this->data['subcategories'] = Subcategories::all();
+        $categoriesArray = array($data['catId']);
+
+
+        $this->data['subcategories'] = Subcategories::getSubCategoriesByCategory($categoriesArray);
 
 
 
