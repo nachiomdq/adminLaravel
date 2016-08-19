@@ -96,7 +96,7 @@ class SlidersController extends Controller
           $element = Sliders::find($sliderID);
           $data = $request->all();
 
-        
+
           $element->title = $data['name'];
           $element->subtitle = $data['subtitle'];
           $element->button_text = $data['button_text'];
@@ -123,7 +123,7 @@ class SlidersController extends Controller
             $name = time()."_".$request->file('coverimage')->getClientOriginalName();
             $element->image =$name;
             $request->file('coverimage')->move(
-                 base_path() . '/public/sliders/', $name
+                 base_path() . '/public/storage/sliders/', $name
             );
 
 
@@ -176,7 +176,7 @@ class SlidersController extends Controller
             $name = time()."_".$request->file('coverimage')->getClientOriginalName();
             $element->image =$name;
             $request->file('coverimage')->move(
-                 base_path() . '/public/sliders/', $name
+                 base_path() . '/public/storage/sliders/', $name
             );
 
 
