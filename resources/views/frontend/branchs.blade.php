@@ -64,7 +64,7 @@
     var longitude = "";
 
   </script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9vzgoYqniRXIIW6tEchX-ByFWSX1zNGU&v=3.exp"></script>
     <script src="{{asset('client-front/map/branchs.js')}}"></script>
     <script src="{{asset('client-front/scripts/branchsAjax.js')}}"></script>
 @endsection

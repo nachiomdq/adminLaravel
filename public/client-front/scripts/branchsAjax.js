@@ -26,7 +26,8 @@ $(".selectState").on('click', function(e) {
 
 });
 function initMap(stateID){
-  initialize(stateID);
+//  initialize(stateID);
+	google.maps.event.addDomListener(window, 'load', initialize(stateID));
 
   $.ajax({
       method: "GET",
@@ -61,6 +62,7 @@ function initFind(){
 
     var center = new google.maps.LatLng(latitude, longitude);
     // using global variable:
+    map.setZoom(12);
     map.panTo(center);
 
   });
