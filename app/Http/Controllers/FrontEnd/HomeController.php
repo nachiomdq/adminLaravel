@@ -10,6 +10,7 @@ use App\Models\Categories;
 use Meta;
 use App\Models\Products;
 use App\Models\Promotions;
+use App\Models\Sliders;
 class HomeController extends Controller
 {
     //
@@ -23,6 +24,8 @@ class HomeController extends Controller
       $this->data['featureds'] = Products::where('featured',1)->get()->take(2);
       #Get Promotions
       $this->data['promotions'] = Promotions::where('country_id',$countryID)->get();
+      #Get Sliders
+      $this->data['sliders'] = Sliders::all();
 
       #SEO
       Meta::setTitle("Neumáticos Corral");

@@ -56,6 +56,7 @@ class ClientController extends Controller
       try {
         $countryID = 1; // cuando sea multiCountry detectar la variable de sesion
         $data = Input::all();
+      
         $this->data['branchs'] = Branchs::getBranchs($countryID,"actives",null,null,"",$data['stateID']);
 
         #Obtengo la primer latitud y longitud del primer state, por defecto queda en CABA SI NO HAY

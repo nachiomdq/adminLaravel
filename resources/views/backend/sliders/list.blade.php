@@ -8,7 +8,7 @@
           <div class="row items-push">
               <div class="col-sm-8">
                   <h1 class="page-heading">
-                      Promociones <small>Listado de todos las promociones de tu sitio</small>
+                      Sliders <small>Listado de todos los sliders de tu sitio</small>
                   </h1>
               </div>
 
@@ -23,24 +23,26 @@
 
 
                 <div class="col-sm-12">
-                      <div class="col-sm-3  pull-right">
-                          <a href="{{url('admin/promotions/new')}}" class="btn btn-block btn-primary pull-right"</a>Crear nueva </a>
-                      </div>
-                      <div class="col-sm-3 pull-right">
-                          <select class="select2 form-control" id="country">
+                  <div class="row">
+                    <div class="col-sm-3 ">
 
-                             @foreach($countries as $country)
-                               <option value="{{$country->id}}">{{$country->name}}</option>
-                             @endforeach
-                          </select>
+                    </div>
+                    <div class="col-sm-3">
+
+                    </div>
+                      <div class="col-sm-3 ">
+                          <a href="{{url('admin/sliders/new')}}" class="btn btn-block btn-primary pull-right"</a>Crear nuevo </a>
                       </div>
-                      <div class="col-sm-3  pull-right">
-                          <select class="select2 form-control" id="status">
+
+                      <div class="col-sm-3">
+                          <select class="form-control" id="status">
                               <option value="actives">Mostrar Activas</option>
                               <option value="deleted">Mostrar eliminadas</option>
 
                           </select>
                       </div>
+                  </div>
+
 
                 </div>
 
@@ -48,7 +50,7 @@
           <div class="block-content">
             <table
                     class="table table-striped table-bordered table-hover ui-datatable" id="dataList"
-                    data-ajax="{{ url('api/promotions/list/1') }}"
+                    data-ajax="{{ url('api/sliders/list/') }}"
                     data-processing= "true"
                     data-server-side= "true"
                     data-global-search="true"
@@ -57,9 +59,10 @@
                     data-paging="true"
                     data-page-length="10"
                     data-language='{"processing": "<i class=\"fa fa-cog fa-spin fa-2x fa-fw margin-bottom\"></i>"}'
-                    data-columns='[{ "data": "name"},
-																	 { "data": "description" },
-																	 { "data": "friendly_url" },
+                    data-columns='[{ "data": "title"},
+																	 { "data": "subtitle" },
+																	 { "data": "button_text" },
+																	 { "data": "href" },
 
 
 
@@ -69,9 +72,10 @@
                 <thead>
                   <tr>
 
-                    <th>Nombre</th>
-										<th>Descripción</th>
-                    <th>URL Friendly</th>
+                    <th>Título</th>
+										<th>Subtítulo</th>
+										<th>Título del botón</th>
+                    <th>URL </th>
 
 
                     <th>Opciones</th>
@@ -84,10 +88,11 @@
 								</tbody>
 								<tfoot>
 									<tr>
+                    <th>Título</th>
+                    <th>Subtítulo</th>
+                    	<th>Título del botón</th>
+                    <th>URL </th>
 
-										<th>Nombre</th>
-										<th>Descripción</th>
-                    <th>URL Friendly</th>
 
 
 
@@ -107,16 +112,13 @@
 
 <script>
 
-var urlAPI = "{{ url('api/promotions') }}";
-var urlController = "{{ url('admin/promotions') }}";
+var urlAPI = "{{ url('api/sliders') }}";
+var urlController = "{{ url('admin/sliders') }}";
 
-$('.select2').select2({
+$('#status').select2({
 
 });
 $('#status').change(function() {
-  reloadDataTableWithSelected();
-});
-$('#country').change(function() {
   reloadDataTableWithSelected();
 });
 $(document).on('click', '.remove-data', function() {
@@ -195,14 +197,14 @@ function reloadDataTableWithSelected() {
 
 
   var active = $('#status').val();
-  var country = $('#country').val();
+  var country = $('#status').val();
 
   reloadDataTable(active,country);
 }
 
 function reloadDataTable( active,country) {
 
-  $('#dataList').DataTable().ajax.url(urlAPI + '/list/'+country+'?status=' + active).load();
+  $('#dataList').DataTable().ajax.url(urlAPI + '/list/status=' + active).load();
 }
 
 function showAction(type) {

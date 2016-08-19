@@ -30,6 +30,7 @@ class ProductsController extends Controller
         $r->message = 'Element deleted';
         $r->data = [];
         return $r->doResponse();
+        
       } catch (Exception $e) {
         $r = new ApiResponse();
         $r->success = false;

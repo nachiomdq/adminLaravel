@@ -183,6 +183,34 @@
 	background-repeat: no-repeat;
 	background-position: right center;
 }
+.header .slider .item .boton a {
+	float: left;
+	margin: 0px;
+	width: 100%;
+	font-family: "Montserrat" ;
+	font-weight: 400;
+	font-size: 11px;
+	color: #f7cc00;
+	text-transform: uppercase;
+	text-decoration: none;
+	background-image: url(../images/slider-link-arrow-iddle.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.header .slider .item .boton a:hover {
+	float: left;
+	margin: 0px;
+	width: 100%;
+	font-family: "Montserrat" ;
+	font-weight: 400;
+	font-size: 11px;
+	color: #f7cc00;
+	text-transform: uppercase;
+	text-decoration: underline;
+	background-image: url(../images/slider-link-arrow-iddle.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
 
 .header .nav {
 	position: relative;

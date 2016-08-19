@@ -30,7 +30,7 @@ class Branchs extends Model
       $query->offset($offset);
     }
     if(!is_null($stateId)){
-
+      if($stateId != "-1")
       $query->where('branch_offices.state_id','=',$stateId);;
 
     }

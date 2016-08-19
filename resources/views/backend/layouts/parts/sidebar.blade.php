@@ -120,9 +120,23 @@
 
                         </ul>
                     </li>
+                    <li>
+                        <a class="nav-submenu" data-toggle="nav-submenu" href="#"><i class="fa fa-slideshare
+"></i><span class="sidebar-mini-hide">Sliders</span></a>
+                        <ul>
+                            <li>
+                                <a href="{{url('admin/sliders/list')}}">Listado</a>
+                            </li>
+
+                            <li>
+                                <a href="{{url('admin/sliders/new')}}">Crear nuevo</a>
+                            </li>
+
+                        </ul>
+                    </li>
                     <li class="hide nav-main-heading"><span class="sidebar-mini-hide">Apps</span></li>
-                    <li class="hide">
-                        <a href="frontend_home.html"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Frontend</span></a>
+                    <li class="">
+                        <a target="_blank" href="{{url(env("APP_URL"))}}"><i class="si si-rocket"></i><span class="sidebar-mini-hide">Ver sitio</span></a>
                     </li>
                 </ul>
             </div>

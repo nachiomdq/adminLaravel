@@ -26,7 +26,7 @@ $(".selectState").on('click', function(e) {
 
 });
 function initMap(stateID){
-  initialize();
+  initialize(stateID);
 
   $.ajax({
       method: "GET",

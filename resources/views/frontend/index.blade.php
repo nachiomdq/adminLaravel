@@ -2,32 +2,23 @@
 @section('content-site')
   <div class="header">
     <div class="slider">
-      <div class="item" style="background-image: url({{asset('client-front/images/Home-bg-1.jpg')}});">
-        <div class="wp">
-          <div class="titulo">
-            <h3>Scorpion ATR</h3>
-          </div>
-          <div class="copete">
-            <p>Control Todo Terreno</p>
-          </div>
-          <div class="boton">
-            <a href="#">Descubrila</a>
-          </div>
-        </div>
-      </div>
-      <div class="item" style="background-image: url({{asset('client-front/images/Home-bg-1.jpg')}});">
-        <div class="wp">
-          <div class="titulo">
-            <h3>Scorpion ATR</h3>
-          </div>
-          <div class="copete">
-            <p>Control Todo Terreno</p>
-          </div>
-          <div class="boton">
-            <a href="#">Descubrila</a>
+      @foreach($sliders as $slider)
+        <div class="item" style="background-image: url({{asset('storage/sliders/'.$slider->image)}});">
+          <div class="wp">
+            <div class="titulo">
+              <h3>{{$slider->title}}</h3>
+            </div>
+            <div class="copete">
+              <p>{{$slider->subtitle}}</p>
+            </div>
+            <div class="boton">
+              <a href="{{$slider->href}}">{{$slider->button_text}}</a>
+            </div>
           </div>
         </div>
-      </div>
+      @endforeach
+
+
     </div>
     <div class="wp">
       <div class="nav">

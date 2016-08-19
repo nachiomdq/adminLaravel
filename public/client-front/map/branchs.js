@@ -1,7 +1,7 @@
 	var map;
 
 
-	function initialize() {
+	function initialize(stateID) {
 
 
 	  var MY_MAPTYPE_ID = 'custom_style';
@@ -128,9 +128,11 @@
 	    }
 
 	  ];
-
+    var zoom = 12;
+    if(stateID == "-1")
+      zoom = 3;
 	  var mapOptions = {
-	    zoom: 12,
+	    zoom: zoom,
 	    center: new google.maps.LatLng(latitude, longitude),
 		mapTypeControlOptions: {
 		      mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
@@ -158,4 +160,3 @@
 
 	google.maps.event.addDomListener(window, 'load', initialize);
   var infowindow = new google.maps.InfoWindow();
- 

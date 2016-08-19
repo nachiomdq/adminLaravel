@@ -11,9 +11,12 @@
   		<div class="wp">
   			<ul>
           <?php $i = 0;?>
+            <li>
+              <a data-id="-1" href="#" class="selectState active">Todos</a>
+            </li>
           @foreach($states as $state)
             	<li>
-      					<a data-id="{{$state->id}}" href="#" class="selectState <?php if ($i == 0) echo "active";?>">{{$state->name}}</a>
+      					<a data-id="{{$state->id}}" href="#" class="selectState ">{{$state->name}}</a>
       				</li>
                 <?php $i++;?>
           @endforeach
@@ -59,7 +62,7 @@
     var icono = '{{asset('client-front/images/icon-mapa.png')}}';
     var latitude = "";
     var longitude = "";
-    
+
   </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="{{asset('client-front/map/branchs.js')}}"></script>
