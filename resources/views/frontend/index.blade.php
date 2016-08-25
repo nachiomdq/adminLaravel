@@ -103,7 +103,7 @@
                 <div class="icono">
                   <img src="{{asset('storage/categories/'.$category->cover_image)}}" alt="categoria-icon-auto" width="150" height="100">
                 </div>
-                <a href="##">{{$category->name}}</a>
+                <a href="{{url('productos/'.$category->friendly_url)}}">{{$category->name}}</a>
               </li>
           @endforeach
 
