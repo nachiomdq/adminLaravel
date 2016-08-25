@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Countries;
 abstract class BaseBackendController extends Controller
 {
-    public function __construct()
+  public function __construct()
   {
       $this->data['countries'] = Countries::all();
       $this->middleware('auth');

@@ -11,9 +11,8 @@ use App\Models\Subcategories;
 class CategoriesController extends BaseBackendController
 {
     public function getList(){
-
-
-        return view('backend.categories.list', $this->data);
+      $this->data = [];
+      return view('backend.categories.list', $this->data);
     }
     public function getEdit($id){
 
@@ -28,7 +27,7 @@ class CategoriesController extends BaseBackendController
       return view('client.posts.detail', $this->data);*/
     }
     public function getNew(){
-
+      $this->data = [];
       return view('backend.categories.create', $this->data);
     }
 }
